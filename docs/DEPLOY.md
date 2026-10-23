@@ -95,12 +95,15 @@ In Supabase:
      - `https://<your-address>/api/auth/callback`
      - `http://localhost:3000/api/auth/callback` (for working on your computer)
    - Click **Save**.
-2. **Authentication → Email Templates → Magic Link**
-   - Add this line to the message body so the email also shows a 6-digit code:
-     ```
-     <p>Or enter this code: <strong>{{ .Token }}</strong></p>
-     ```
-   - Click **Save**.
+2. **Authentication → Emails → Templates**: paste the branded templates so emails show the 6-digit code the sign-in page asks for.
+   For each row below: open the template, set the **Subject**, open the HTML file in VS Code, select all, copy, replace the **Body** (Source) with it, then click **Save**.
+
+   | Template | Subject | Body file |
+   |---|---|---|
+   | **Magic link** |  |  |
+   | **Confirm signup** |  |  |
+   | **Invite user** |  |  |
+
 3. Optional: **Authentication → Sign In / Providers → Google**, to let students sign in with Google.
    - You need a Client ID and secret from Google Cloud Console → APIs & Services → Credentials → OAuth client (Web).
    - The authorised redirect URI is the one Supabase shows on that page.
