@@ -35,7 +35,7 @@ export type LoginLabels = {
  * `allowSignup` is false for /admin — staff accounts are created by invitation only.
  * In local demo mode (no Supabase) it offers one-click demo accounts instead.
  */
-export function LoginPanel({ next, labels, demo, configured, allowSignup, demoRoles }: { next: string; labels: LoginLabels; demo: boolean; configured: boolean; allowSignup: boolean; demoRoles: ('student' | 'counsellor' | 'admin')[] }) {
+export function LoginPanel({ next, labels, demo, configured, allowSignup, demoRoles, google: googleEnabled = false }: { next: string; labels: LoginLabels; demo: boolean; configured: boolean; allowSignup: boolean; google?: boolean; demoRoles: ('student' | 'counsellor' | 'admin')[] }) {
   const router = useRouter();
   const turnstile = useTurnstile();
   const [email, setEmail] = useState('');
@@ -132,10 +132,14 @@ export function LoginPanel({ next, labels, demo, configured, allowSignup, demoRo
 
   return (
     <div className="grid gap-4">
-      <button type="button" className="btn btn-outline btn-block btn-lg auth-google" onClick={google} disabled={busy}>
-        <GoogleMark /> {labels.google}
-      </button>
-      <p className="auth-or"><span>{labels.or}</span></p>
+      {googleEnabled && (
+        <>
+          <button type="button" className="btn btn-outline btn-block btn-lg auth-google" onClick={google} disabled={busy}>
+            <GoogleMark /> {labels.google}
+          </button>
+          <p className="auth-or"><span>{labels.or}</span></p>
+        </>
+      )}
       <form className="lead-form" onSubmit={sendLink} noValidate>
         {error && <p className="form-error" role="alert">{error}</p>}
         <label>

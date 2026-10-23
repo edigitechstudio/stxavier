@@ -5,6 +5,7 @@ import { GraduationCap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { LoginPanel, type LoginLabels } from '@/components/auth/login-panel';
 import { demoAuth } from '@/lib/auth/mode';
+import { getAuthProviders } from '@/lib/auth/providers';
 import { safeNext } from '@/lib/auth/safe-next';
 import { getViewer } from '@/lib/auth/viewer';
 import { isSupabaseConfigured } from '@/lib/env';
@@ -44,7 +45,7 @@ async function LoginBody({ locale, searchParams }: { locale: string; searchParam
   return (
     <>
       {error && <p className="form-error" role="alert">{error}</p>}
-      <LoginPanel next={next} labels={labels} demo={demoAuth} configured={isSupabaseConfigured} allowSignup demoRoles={['student']} />
+      <LoginPanel next={next} labels={labels} demo={demoAuth} configured={isSupabaseConfigured} allowSignup demoRoles={['student']} google={(await getAuthProviders()).google} />
     </>
   );
 }

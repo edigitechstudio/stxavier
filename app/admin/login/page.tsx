@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { ShieldCheck } from 'lucide-react';
 import { LoginPanel, type LoginLabels } from '@/components/auth/login-panel';
 import { demoAuth } from '@/lib/auth/mode';
+import { getAuthProviders } from '@/lib/auth/providers';
 import { safeNext } from '@/lib/auth/safe-next';
 import { getViewer, isStaff } from '@/lib/auth/viewer';
 import { isSupabaseConfigured } from '@/lib/env';
@@ -67,7 +68,7 @@ async function Body({ searchParams }: { searchParams: PageProps<'/admin/login'>[
     <>
       {error && <p className="form-error" role="alert">{error}</p>}
       {viewer && !error && <p className="form-error" role="alert">{ERRORS.forbidden}</p>}
-      <LoginPanel next={next.startsWith('/admin') ? next : '/admin'} labels={LABELS} demo={demoAuth} configured={isSupabaseConfigured} allowSignup={false} demoRoles={['admin', 'counsellor']} />
+      <LoginPanel next={next.startsWith('/admin') ? next : '/admin'} labels={LABELS} demo={demoAuth} configured={isSupabaseConfigured} allowSignup={false} demoRoles={['admin', 'counsellor']} google={(await getAuthProviders()).google} />
     </>
   );
 }
