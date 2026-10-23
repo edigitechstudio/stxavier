@@ -65,7 +65,7 @@ All of them are documented in [`.env.example`](.env.example). The ones that matt
 
 | Variable | Needed for |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, emails: `https://stxavier.com.np` |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, emails: `https://stxavier.com.np`. Leave blank on Vercel until the domain is added; the `*.vercel.app` address is used |
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | Editable content, leads, bookings, portal, uploads |
 | `REVALIDATE_SECRET` | Instant publishing of content edits (`/api/revalidate`) |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | Bot protection on every form and the chat |
