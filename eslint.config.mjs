@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Archived Vite prototype kept for design reference — not part of this app.
+    "legacy/**",
   ]),
 ]);
 
