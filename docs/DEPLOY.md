@@ -100,9 +100,9 @@ In Supabase:
 
    | Template | Subject | Body file |
    |---|---|---|
-   | **Magic link** |  |  |
-   | **Confirm signup** |  |  |
-   | **Invite user** |  |  |
+   | **Magic link** | `Your St. Xavier sign-in code` | `supabase/templates/magic-link.html` |
+   | **Confirm signup** | `Your St. Xavier sign-in code` | `supabase/templates/confirm-signup.html` |
+   | **Invite user** | `Your St. Xavier student portal is ready` | `supabase/templates/invite.html` |
 
 3. Optional: **Authentication → Sign In / Providers → Google**, to let students sign in with Google.
    - You need a Client ID and secret from Google Cloud Console → APIs & Services → Credentials → OAuth client (Web).
