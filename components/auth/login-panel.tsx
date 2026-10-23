@@ -16,6 +16,7 @@ export type LoginLabels = {
   sentTitle: string;
   sentBody: string; // contains {email}
   code: string;
+  haveCode: string;
   verify: string;
   useDifferent: string;
   invalidEmail: string;
@@ -41,6 +42,8 @@ export function LoginPanel({ next, labels, demo, configured, allowSignup, demoRo
   const [email, setEmail] = useState('');
   const [code, setCode] = useState('');
   const [step, setStep] = useState<'email' | 'code'>('email');
+  // The email always has a link; it only has a code once the Supabase email templates include {{ .Token }}.
+  const [showCode, setShowCode] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -116,14 +119,22 @@ export function LoginPanel({ next, labels, demo, configured, allowSignup, demoRo
           <p className="muted">{labels.sentBody.replace('{email}', email)}</p>
         </div>
         {error && <p className="form-error" role="alert">{error}</p>}
-        <label>
-          {labels.code}
-          <input value={code} onChange={(e) => setCode(e.target.value)} inputMode="numeric" autoComplete="one-time-code" maxLength={8} className="auth-code" aria-invalid={!!error} />
-        </label>
-        <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={busy}>
-          {busy ? <Loader2 size={18} className="animate-spin" aria-hidden /> : <KeyRound size={18} aria-hidden />} {labels.verify}
-        </button>
-        <button type="button" className="booking-back" onClick={() => { setStep('email'); setCode(''); setError(null); }}>
+        {showCode ? (
+          <>
+            <label>
+              {labels.code}
+              <input value={code} onChange={(e) => setCode(e.target.value)} inputMode="numeric" autoComplete="one-time-code" maxLength={8} className="auth-code" aria-invalid={!!error} autoFocus />
+            </label>
+            <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={busy}>
+              {busy ? <Loader2 size={18} className="animate-spin" aria-hidden /> : <KeyRound size={18} aria-hidden />} {labels.verify}
+            </button>
+          </>
+        ) : (
+          <button type="button" className="btn btn-outline btn-block" onClick={() => setShowCode(true)}>
+            <KeyRound size={16} aria-hidden /> {labels.haveCode}
+          </button>
+        )}
+        <button type="button" className="booking-back" onClick={() => { setStep('email'); setCode(''); setError(null); setShowCode(false); }}>
           <ArrowLeft size={16} aria-hidden /> {labels.useDifferent}
         </button>
       </form>

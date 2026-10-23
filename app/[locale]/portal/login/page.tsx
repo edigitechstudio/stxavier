@@ -40,7 +40,7 @@ async function LoginBody({ locale, searchParams }: { locale: string; searchParam
   if (await getViewer()) redirect(next);
   const t = await getTranslations('portal.login');
   const error = typeof sp.error === 'string' && ['link_expired', 'link_invalid', 'not_configured'].includes(sp.error) ? t(`errors.${sp.error as 'link_expired'}`) : null;
-  const keys = ['email', 'emailPlaceholder', 'sendLink', 'sending', 'google', 'or', 'sentTitle', 'sentBody', 'code', 'verify', 'useDifferent', 'invalidEmail', 'invalidCode', 'error', 'verifying', 'demoTitle', 'demoBody', 'demoStudent', 'demoCounsellor', 'demoAdmin'] as const;
+  const keys = ['email', 'emailPlaceholder', 'sendLink', 'sending', 'google', 'or', 'sentTitle', 'sentBody', 'code', 'haveCode', 'verify', 'useDifferent', 'invalidEmail', 'invalidCode', 'error', 'verifying', 'demoTitle', 'demoBody', 'demoStudent', 'demoCounsellor', 'demoAdmin'] as const;
   const labels = { ...Object.fromEntries(keys.map((k) => [k, k === 'sentBody' ? t.raw(k) : t(k)])), unavailable: t('errors.not_configured') } as LoginLabels;
   return (
     <>
