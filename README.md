@@ -6,6 +6,7 @@ The bilingual (English / नेपाली) website, student portal and staff d
 
 - Build plan and phase history: [docs/PLAN.md](docs/PLAN.md). The original brief is [consultancy-website-prompt.md](consultancy-website-prompt.md).
 - For the team that edits content and runs the admin: [docs/CONTENT-EDITING.md](docs/CONTENT-EDITING.md).
+- To put the site live step by step (free, no domain needed): [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ---
 
