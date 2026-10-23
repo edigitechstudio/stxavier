@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { refreshSession } from './lib/supabase/proxy';
+import { applyCookies, refreshSession } from './lib/supabase/proxy';
 
 const intl = createMiddleware(routing);
 const PORTAL = /^\/(en|ne)\/portal(?:\/|$)/;
@@ -22,22 +22,24 @@ function toLogin(req: NextRequest, loginPath: string) {
 export default async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // Refresh the session before building the response so the page receives the rotated cookies.
   if (pathname === '/admin' || pathname.startsWith('/admin/')) {
-    const res = NextResponse.next({ request: req });
-    const signedIn = await refreshSession(req, res);
-    if (!signedIn && !PUBLIC_AUTH.test(pathname)) return toLogin(req, '/admin/login');
+    const { signedIn, cookies } = await refreshSession(req);
+    if (!signedIn && !PUBLIC_AUTH.test(pathname)) return applyCookies(toLogin(req, '/admin/login'), cookies);
+    const res = applyCookies(NextResponse.next({ request: { headers: req.headers } }), cookies);
     res.headers.set('X-Robots-Tag', 'noindex, nofollow');
     return res;
   }
 
-  const res = intl(req);
   const portal = PORTAL.exec(pathname);
   if (portal) {
-    const signedIn = await refreshSession(req, res);
-    if (!signedIn && !PUBLIC_AUTH.test(pathname)) return toLogin(req, `/${portal[1]}/portal/login`);
+    const { signedIn, cookies } = await refreshSession(req);
+    if (!signedIn && !PUBLIC_AUTH.test(pathname)) return applyCookies(toLogin(req, `/${portal[1]}/portal/login`), cookies);
+    const res = applyCookies(intl(req), cookies);
     res.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    return res;
   }
-  return res;
+  return intl(req);
 }
 
 export const config = {
