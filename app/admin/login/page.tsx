@@ -27,9 +27,9 @@ const LABELS: LoginLabels = {
   invalidEmail: 'Please enter a valid email address.',
   invalidCode: 'That code is not valid or has expired.',
   error: 'Something went wrong. Please try again.',
-  verifying: 'Just a moment — verifying you’re human.',
+  verifying: 'Just a moment, verifying you’re human.',
   demoTitle: 'Local demo mode',
-  demoBody: 'Supabase isn’t connected. Sign in with a sample staff account — development only.',
+  demoBody: 'Supabase isn’t connected. Sign in with a sample staff account. Development only.',
   demoStudent: 'Demo student',
   demoCounsellor: 'Continue as demo counsellor',
   demoAdmin: 'Continue as demo admin',
@@ -49,7 +49,7 @@ export default function AdminLoginPage({ searchParams }: PageProps<'/admin/login
       <section className="auth-card">
         <span className="auth-icon"><ShieldCheck size={28} aria-hidden /></span>
         <h1>Staff sign-in</h1>
-        <p className="muted">St. Xavier Educational Network — admin dashboard</p>
+        <p className="muted">St. Xavier Educational Network · Admin dashboard</p>
         <Suspense fallback={<div className="auth-skel" aria-hidden />}>
           <Body searchParams={searchParams} />
         </Suspense>

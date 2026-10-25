@@ -149,8 +149,8 @@ function Field({ name, path, value, sample, ctx, depth, onChange, ariaLabel }: {
     return (
       <label className="cms-check">
         <input type="checkbox" checked={value as boolean} onChange={(e) => onChange(e.target.checked)} /> {label}
-        {name === 'is_placeholder' && <small className="muted"> — placeholder entries never appear on the live site</small>}
-        {name === 'published' && <small className="muted"> — show on the website</small>}
+        {name === 'is_placeholder' && <small className="muted"> (placeholder entries never appear on the live site)</small>}
+        {name === 'published' && <small className="muted"> (shows on the website)</small>}
       </label>
     );
   }

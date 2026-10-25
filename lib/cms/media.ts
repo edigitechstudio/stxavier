@@ -14,7 +14,7 @@ export type MediaItem = { url: string; name: string; size: number; created: stri
 const TYPES = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/avif': 'avif' } as const;
 type ImageMime = keyof typeof TYPES;
 
-/** Real image type from the file's first bytes (raster formats only — SVG can carry scripts). */
+/** Real image type from the file's first bytes (raster formats only. SVG can carry scripts). */
 export function sniffImage(b: Uint8Array): ImageMime | null {
   const at = (sig: number[], off = 0) => sig.every((v, i) => b[off + i] === v);
   if (at([0xff, 0xd8, 0xff])) return 'image/jpeg';

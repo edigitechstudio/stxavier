@@ -80,7 +80,7 @@ export async function Footer() {
         {office && (
           <div>
             <h3>{t('visitUs')}</h3>
-            {/* NAP — must match the Google Business Profile exactly. */}
+            {/* NAP, must match the Google Business Profile exactly. */}
             <address className="contact-list">
               <p>
                 <MapPin size={16} aria-hidden />

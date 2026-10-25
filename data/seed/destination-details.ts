@@ -86,8 +86,8 @@ export const destinationDetails: Record<string, DestinationDetails> = {
       nepali_community: L('Large Nepali communities live in London and Aldershot, with active student associations at many universities.'),
     },
     sources: [
-      { label: 'GOV.UK — Student visa', url: 'https://www.gov.uk/student-visa', accessed: ACCESSED },
-      { label: 'GOV.UK — Graduate visa', url: 'https://www.gov.uk/graduate-visa', accessed: ACCESSED },
+      { label: 'GOV.UK: Student visa', url: 'https://www.gov.uk/student-visa', accessed: ACCESSED },
+      { label: 'GOV.UK: Graduate visa', url: 'https://www.gov.uk/graduate-visa', accessed: ACCESSED },
     ],
   },
 
@@ -154,7 +154,7 @@ export const destinationDetails: Record<string, DestinationDetails> = {
       nepali_community: L('Sydney and Melbourne host some of the largest Nepali communities outside South Asia, with temples, restaurants and cultural events.'),
     },
     sources: [
-      { label: 'Department of Home Affairs — Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500', accessed: ACCESSED },
+      { label: 'Department of Home Affairs: Student visa (subclass 500)', url: 'https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500', accessed: ACCESSED },
       { label: 'Study Australia (Australian Government)', url: 'https://www.studyaustralia.gov.au/', accessed: ACCESSED },
     ],
   },
@@ -221,7 +221,7 @@ export const destinationDetails: Record<string, DestinationDetails> = {
       nepali_community: L('The Greater Toronto Area has a growing Nepali community with cultural organisations and events.'),
     },
     sources: [
-      { label: 'IRCC — Study permit', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html', accessed: ACCESSED },
+      { label: 'IRCC: Study permit', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html', accessed: ACCESSED },
     ],
   },
 
@@ -237,7 +237,7 @@ export const destinationDetails: Record<string, DestinationDetails> = {
     ],
     costs: {
       answer: L(
-        'Tuition for international students in the USA ranges widely — roughly USD 10,000 per year at some community colleges to over USD 50,000 at private universities. Your Form I-20 lists the estimated total cost of attendance, and you must show funds to cover at least the first year.',
+        'Tuition for international students in the USA ranges widely: roughly USD 10,000 per year at some community colleges to over USD 50,000 at private universities. Your Form I-20 lists the estimated total cost of attendance, and you must show funds to cover at least the first year.',
       ),
       tuition: [
         { level: L('Community college'), range: L('USD 8,000 – 15,000 / year') },
@@ -283,11 +283,11 @@ export const destinationDetails: Record<string, DestinationDetails> = {
     ),
     life: {
       city: 'New York',
-      text: L('A global city with endless opportunities, though living costs are high — many students choose more affordable cities in Texas or the Midwest.'),
+      text: L('A global city with endless opportunities, though living costs are high. Many students choose more affordable cities in Texas or the Midwest.'),
       nepali_community: L('Jackson Heights in Queens is home to one of the largest Nepali communities in the USA.'),
     },
     sources: [
-      { label: 'U.S. Department of State — Student visa', url: 'https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html', accessed: ACCESSED },
+      { label: 'U.S. Department of State: Student visa', url: 'https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html', accessed: ACCESSED },
       { label: 'Study in the States (DHS)', url: 'https://studyinthestates.dhs.gov/', accessed: ACCESSED },
     ],
   },
@@ -352,7 +352,7 @@ export const destinationDetails: Record<string, DestinationDetails> = {
       nepali_community: L('Auckland has an active Nepali community with cultural associations and festival celebrations.'),
     },
     sources: [
-      { label: 'Immigration New Zealand — Student Visa', url: 'https://www.immigration.govt.nz/', accessed: ACCESSED },
+      { label: 'Immigration New Zealand: Student Visa', url: 'https://www.immigration.govt.nz/', accessed: ACCESSED },
       { label: 'Study with New Zealand', url: 'https://www.studywithnewzealand.govt.nz/', accessed: ACCESSED },
     ],
   },
@@ -471,8 +471,8 @@ export const destinationDetails: Record<string, DestinationDetails> = {
       nepali_community: L('Tokyo has a large Nepali community, with Nepali restaurants and shops in areas such as Shin-Okubo.'),
     },
     sources: [
-      { label: 'JASSO — Study in Japan', url: 'https://www.studyinjapan.go.jp/en/', accessed: ACCESSED },
-      { label: 'Ministry of Foreign Affairs of Japan — Visas', url: 'https://www.mofa.go.jp/j_info/visit/visa/index.html', accessed: ACCESSED },
+      { label: 'JASSO: Study in Japan', url: 'https://www.studyinjapan.go.jp/en/', accessed: ACCESSED },
+      { label: 'Ministry of Foreign Affairs of Japan: Visas', url: 'https://www.mofa.go.jp/j_info/visit/visa/index.html', accessed: ACCESSED },
     ],
   },
 };

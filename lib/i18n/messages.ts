@@ -36,7 +36,7 @@ export async function loadMessages(locale: string): Promise<Messages> {
       if (!node) break;
       node = node[part] as Messages;
     }
-    // Only replace existing string entries — an override can't change the message structure.
+    // Only replace existing string entries. An override can't change the message structure.
     if (node && typeof node[path[path.length - 1]] === 'string') node[path[path.length - 1]] = overrides[key];
   }
   return merged;

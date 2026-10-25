@@ -11,7 +11,7 @@ export async function sendEmail(msg: Message): Promise<{ sent: boolean }> {
   const key = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM || 'St. Xavier Educational Network <noreply@stxavier.com.np>';
   if (!key) {
-    console.info('[email] (not sent — RESEND_API_KEY unset)', { to: msg.to, subject: msg.subject });
+    console.info('[email] (not sent, RESEND_API_KEY unset)', { to: msg.to, subject: msg.subject });
     return { sent: false };
   }
   try {

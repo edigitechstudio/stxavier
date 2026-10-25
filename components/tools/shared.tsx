@@ -45,7 +45,7 @@ export function readQuery(): URLSearchParams {
 /**
  * Two-way URL sync for shareable tool state: restores from the query string once after mount,
  * and only then starts writing changes back. (Writing before the restore would overwrite a
- * shared link with defaults — e.g. under React's development double-invoked effects.)
+ * shared link with defaults. E.g. under React's development double-invoked effects.)
  */
 export function useQuerySync(apply: (q: URLSearchParams) => void, values: Record<string, string | number | undefined>) {
   const ready = useRef(false);

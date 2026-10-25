@@ -3,7 +3,7 @@ import { refresh } from 'next/cache';
 import { getViewer } from '@/lib/auth/viewer';
 import { deleteMyDocument, markNotificationsRead } from '@/lib/portal/student';
 
-/** Every action re-checks the session itself — never trust that the page was protected. */
+/** Every action re-checks the session itself. Never trust that the page was protected. */
 async function viewerOrThrow() {
   const v = await getViewer();
   if (!v) throw new Error('Not signed in');

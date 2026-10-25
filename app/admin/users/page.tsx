@@ -39,7 +39,7 @@ async function Users() {
           {rows.map((p) => (
             <tr key={p.id}>
               <td>
-                {p.full_name ?? '—'}<small>{p.email}</small>
+                {p.full_name ?? '-'}<small>{p.email}</small>
                 {withPassword && p.id !== viewer.id && !demoAuth && <SetPasswordForm userId={p.id} name={p.full_name ?? p.email ?? 'this person'} />}
               </td>
               <td className="nowrap">{fmtDate(p.created_at)}</td>

@@ -44,7 +44,7 @@ export function estimateCost(
   };
 }
 
-/** Midpoint of the first-year cost in NPR — used to compare destinations. */
+/** Midpoint of the first-year cost in NPR. Used to compare destinations. */
 export function firstYearMidNpr(profile: CostProfile, level: Level, tier: CityTier, nprPerUnit: number | null): number | null {
   const b = estimateCost(profile, level, tier, 1, nprPerUnit);
   if (!b?.perYearNpr) return null;

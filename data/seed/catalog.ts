@@ -39,7 +39,7 @@ const baseDestinations: BaseDestination[] = [
   {
     slug: 'canada', iso3: 'CAN', iso2: 'CA', lat: 57, lng: -105, sort: 2, published: true, updated_at: UPDATED,
     name: { en: 'Canada', ne: 'क्यानडा' },
-    summary: { en: 'Affordable, welcoming and globally respected, with co-op programs and post-graduation work permits.', ne: 'किफायती, स्वागतयोग्य र विश्वमान्य — को-अप कार्यक्रम र स्नातकोत्तर कार्य अनुमतिसहित।' },
+    summary: { en: 'Affordable, welcoming and globally respected, with co-op programs and post-graduation work permits.', ne: 'किफायती, स्वागतयोग्य र विश्वमान्य, को-अप कार्यक्रम र स्नातकोत्तर कार्य अनुमतिसहित।' },
     hero_image: unsplash('1517935706615-2717063c2225'),
     key_facts: facts({ intakes: 'January, May, September', work_rights: 'Part-time off campus in term; full-time in breaks', post_study_visa: 'Post-Graduation Work Permit (up to 3 years)', visa_processing: 'About 8 weeks', pr_pathway: 'Express Entry / Provincial Nominee' }),
     badge: { en: '220+ universities', ne: '220+ विश्वविद्यालय' }, // TODO: verify count
@@ -87,10 +87,10 @@ export const destinations: Destination[] = baseDestinations.map((d) => ({
 }));
 
 const baseServices: Omit<Service, 'details'>[] = [
-  { slug: 'study-abroad-counselling', icon: 'GraduationCap', sort: 0, published: true, title: { en: 'Study Abroad', ne: 'विदेश अध्ययन' }, summary: { en: 'Start your journey with St. Xavier — expert counselling, honest advice and admissions to universities that fit your goals and budget.', ne: 'सेन्ट जेभियरसँग यात्रा सुरु गर्नुहोस् — विज्ञ परामर्श, इमानदार सल्लाह र तपाईंको लक्ष्य तथा बजेट सुहाउँदो विश्वविद्यालयमा भर्ना।' } },
-  { slug: 'mock-test', icon: 'ClipboardCheck', sort: 1, published: true, title: { en: 'Mock Test', ne: 'मक टेस्ट' }, summary: { en: 'Full-length, exam-condition mock tests for IELTS, PTE and TOEFL — with band-level feedback from certified trainers.', ne: 'IELTS, PTE र TOEFL को वास्तविक परीक्षाजस्तै पूर्ण मक टेस्ट — प्रमाणित प्रशिक्षकबाट ब्यान्ड-स्तरको प्रतिक्रियासहित।' } },
-  { slug: 'test-preparation', icon: 'BookOpenCheck', sort: 2, published: true, title: { en: 'Test Preparation', ne: 'परीक्षा तयारी' }, summary: { en: 'Structured classes, small batches and personal mentoring designed to lift your score in the shortest possible time.', ne: 'संरचित कक्षा, साना ब्याच र व्यक्तिगत मार्गदर्शन — छोटो समयमै राम्रो अंकका लागि।' } },
-  { slug: 'test-registration', icon: 'CalendarCheck', sort: 3, published: true, title: { en: 'Test Registration', ne: 'परीक्षा दर्ता' }, summary: { en: 'We handle official test registration so you get the right date, centre and format — without the paperwork stress.', ne: 'सही मिति, केन्द्र र ढाँचामा आधिकारिक परीक्षा दर्ता — कागजी झन्झटबिना।' } },
+  { slug: 'study-abroad-counselling', icon: 'GraduationCap', sort: 0, published: true, title: { en: 'Study Abroad', ne: 'विदेश अध्ययन' }, summary: { en: 'Start your journey with St. Xavier: expert counselling, honest advice and admissions to universities that fit your goals and budget.', ne: 'सेन्ट जेभियरसँग यात्रा सुरु गर्नुहोस्, विज्ञ परामर्श, इमानदार सल्लाह र तपाईंको लक्ष्य तथा बजेट सुहाउँदो विश्वविद्यालयमा भर्ना।' } },
+  { slug: 'mock-test', icon: 'ClipboardCheck', sort: 1, published: true, title: { en: 'Mock Test', ne: 'मक टेस्ट' }, summary: { en: 'Full-length, exam-condition mock tests for IELTS, PTE and TOEFL. With band-level feedback from certified trainers.', ne: 'IELTS, PTE र TOEFL को वास्तविक परीक्षाजस्तै पूर्ण मक टेस्ट, प्रमाणित प्रशिक्षकबाट ब्यान्ड-स्तरको प्रतिक्रियासहित।' } },
+  { slug: 'test-preparation', icon: 'BookOpenCheck', sort: 2, published: true, title: { en: 'Test Preparation', ne: 'परीक्षा तयारी' }, summary: { en: 'Structured classes, small batches and personal mentoring designed to lift your score in the shortest possible time.', ne: 'संरचित कक्षा, साना ब्याच र व्यक्तिगत मार्गदर्शन, छोटो समयमै राम्रो अंकका लागि।' } },
+  { slug: 'test-registration', icon: 'CalendarCheck', sort: 3, published: true, title: { en: 'Test Registration', ne: 'परीक्षा दर्ता' }, summary: { en: 'We handle official test registration so you get the right date, centre and format. Without the paperwork stress.', ne: 'सही मिति, केन्द्र र ढाँचामा आधिकारिक परीक्षा दर्ता, कागजी झन्झटबिना।' } },
 ];
 
 export const services: Service[] = baseServices.map((x) => ({ ...x, details: serviceDetails[x.slug] ?? null }));
@@ -167,7 +167,7 @@ export const faqs: Faq[] = [
   {
     id: 'general-cost', scope: 'home', sort: 0, published: true,
     question: { en: 'Is the first counselling session free?', ne: 'के पहिलो परामर्श निःशुल्क हो?' },
-    answer: { en: 'Yes. Your first counselling session at St. Xavier Educational Network is free, in person at our Kathmandu office, over Zoom or on a WhatsApp call. We explain any service fees in writing before you commit.', ne: 'हो। सेन्ट जेभियरमा पहिलो परामर्श निःशुल्क हो — काठमाडौं कार्यालयमा, Zoom वा WhatsApp कलमार्फत। कुनै शुल्क लाग्ने भए प्रतिबद्धता अघि नै लिखित रूपमा जानकारी दिन्छौं।' },
+    answer: { en: 'Yes. Your first counselling session at St. Xavier Educational Network is free, in person at our Kathmandu office, over Zoom or on a WhatsApp call. We explain any service fees in writing before you commit.', ne: 'हो। सेन्ट जेभियरमा पहिलो परामर्श निःशुल्क हो, काठमाडौं कार्यालयमा, Zoom वा WhatsApp कलमार्फत। कुनै शुल्क लाग्ने भए प्रतिबद्धता अघि नै लिखित रूपमा जानकारी दिन्छौं।' },
   },
   {
     id: 'general-countries', scope: 'home', sort: 1, published: true,

@@ -22,7 +22,7 @@ export function writeConsent(value: Consent) {
   try {
     localStorage.setItem(KEY, value);
   } catch {
-    /* storage blocked — consent applies for this page view only */
+    /* storage blocked, consent applies for this page view only */
   }
   window.dispatchEvent(new CustomEvent(CONSENT_CHANGE, { detail: value }));
 }

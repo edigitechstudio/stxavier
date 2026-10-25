@@ -5,13 +5,13 @@ let warned = false;
 /**
  * Verifies a Cloudflare Turnstile token. Enforced whenever TURNSTILE_SECRET_KEY is set.
  * Without it, verification is skipped with a one-time warning (rate limiting and honeypots still
- * apply) — so a missing key never silently blocks every enquiry.
+ * apply), so a missing key never silently blocks every enquiry.
  */
 export async function verifyTurnstile(token: string | undefined, ip?: string): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) {
     if (!warned && process.env.NODE_ENV === 'production') {
-      console.warn('[turnstile] TURNSTILE_SECRET_KEY is not set — bot protection is disabled.');
+      console.warn('[turnstile] TURNSTILE_SECRET_KEY is not set. Bot protection is disabled.');
       warned = true;
     }
     return true;

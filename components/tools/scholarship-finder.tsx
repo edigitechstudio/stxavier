@@ -92,7 +92,7 @@ export function ScholarshipFinder({
         <label className="field">
           {ts('percent')}
           <div className="input-suffix">
-            <input className="control" type="number" inputMode="decimal" min={0} max={100} value={percent} onChange={(e) => setPercent(e.target.value)} placeholder="—" />
+            <input className="control" type="number" inputMode="decimal" min={0} max={100} value={percent} onChange={(e) => setPercent(e.target.value)} placeholder="75" />
             <span>%</span>
           </div>
         </label>

@@ -148,7 +148,7 @@ export async function setBookingStatus(id: string, status: BookingStatus) {
     return;
   }
   const db = await createSessionClient();
-  // Re-confirming a cancelled booking can collide with a newer one (exclusion constraint) — surface it.
+  // Re-confirming a cancelled booking can collide with a newer one (exclusion constraint), surface it.
   const { error } = await db.from('bookings').update({ status }).eq('id', id);
   if (error?.code === '23P01') throw new Error('That time has since been booked by someone else.');
   fail(error);

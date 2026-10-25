@@ -82,7 +82,7 @@ async function Dashboard({ locale }: { locale: string }) {
                     {history.map((h) => (
                       <li key={h.id}>
                         <time dateTime={h.created_at}>{format.dateTime(new Date(h.created_at), { dateStyle: 'medium' })}</time>
-                        <span><strong>{labels[h.to_stage]}</strong>{h.note && <> — {h.note}</>}</span>
+                        <span><strong>{labels[h.to_stage]}</strong>{h.note && <>: {h.note}</>}</span>
                       </li>
                     ))}
                   </ul>

@@ -8,7 +8,7 @@ import { devContent, seedContent, type BlogRow } from './dev-store';
 import { complete, conform, nullablePaths, sampleOf, suggestionsFrom, titleOf } from './shape';
 
 /**
- * Read/write layer for /admin/cms. Supabase when configured (admin RLS policies apply — the
+ * Read/write layer for /admin/cms. Supabase when configured (admin RLS policies apply. The
  * session client is used), otherwise the in-memory development copy. Callers check the role.
  */
 type Row = Record<string, unknown>;
@@ -125,7 +125,7 @@ export async function saveEntry(c: Collection, id: string | null, input: unknown
 
   const key = String(value[c.pk] ?? '').trim();
   if (!ID.test(key)) return { ok: false, errors: [`${c.pk} must use lowercase letters, numbers and hyphens`] };
-  if (id && key !== id) return { ok: false, errors: [`${c.pk} can't be changed — create a new entry instead`] };
+  if (id && key !== id) return { ok: false, errors: [`${c.pk} can't be changed. Create a new entry instead`] };
   if (!id) {
     const exists = c.kind === 'blog' ? (await blogRows()).some((r) => r.slug === key) || (await fileSlugs()).includes(key) : (await tableRows(c)).some((r) => String(r[c.pk]) === key);
     if (exists) return { ok: false, errors: [`An entry with ${c.pk} "${key}" already exists`] };
@@ -168,6 +168,6 @@ export async function deleteEntry(c: Collection, id: string): Promise<{ ok: bool
     return { ok: true };
   }
   const { error } = await (await createSessionClient()).from(c.table!).delete().eq(c.pk, id);
-  // e.g. a counsellor referenced by bookings — explain instead of failing silently.
+  // e.g. a counsellor referenced by bookings. Explain instead of failing silently.
   return error ? { ok: false, error: error.code === '23503' ? 'Other records still use this entry. Unpublish it instead.' : error.message } : { ok: true };
 }

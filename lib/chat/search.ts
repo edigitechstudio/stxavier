@@ -121,7 +121,7 @@ export function search(index: SearchIndex, query: string, k = 6, boostPath?: str
   // Each question word plus its synonyms forms a group; coverage counts groups that match.
   const focusGroups = groupsOf(focus ?? query);
   // Words from the new message (and their synonyms) count fully; earlier turns only add a
-  // little context — unexpanded, so the old topic's synonyms can't outweigh the new question.
+  // little context, unexpanded, so the old topic's synonyms can't outweigh the new question.
   const focusTerms = new Set(focusGroups.flatMap((g) => [...g]));
   const contextTerms = focus ? tokenize(query).filter((t) => !focusTerms.has(t)) : [];
   const terms = [...new Set([...focusTerms, ...contextTerms])];

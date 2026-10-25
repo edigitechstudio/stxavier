@@ -140,7 +140,7 @@ export function EmiCalculator({ defaults }: { defaults: Defaults }) {
         <div>
           <div className="result-hero" aria-live="polite">
             <small>{t('emi')}</small>
-            <strong>{result ? fmt.npr(result.emi) : '—'}</strong>
+            <strong>{result ? fmt.npr(result.emi) : '-'}</strong>
             {!result && <p>{t('invalid')}</p>}
           </div>
           {result && (

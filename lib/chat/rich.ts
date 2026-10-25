@@ -1,6 +1,6 @@
 /**
- * Parses the small Markdown subset the assistant may use — paragraphs, bullet/numbered lists,
- * **bold** and [links](…) — into a tree. Nothing is ever rendered as HTML, and only safe link
+ * Parses the small Markdown subset the assistant may use. Paragraphs, bullet/numbered lists,
+ * **bold** and [links](…), into a tree. Nothing is ever rendered as HTML, and only safe link
  * targets survive: site paths, tel:, mailto:, WhatsApp and our own domain.
  */
 export type Inline = { kind: 'text'; text: string } | { kind: 'bold'; text: string } | { kind: 'link'; text: string; href: string; internal: boolean };

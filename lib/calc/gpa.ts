@@ -4,7 +4,7 @@ import type { GradeBand } from '@/types/tools';
  * Grade-band conversions for Nepali grading scales (NEB, TU). Bands come from data, so new
  * scales can be added without code changes. Conversions between a continuous GPA and a
  * percentage interpolate linearly between band anchors (gpa ↔ band minimum), which is how
- * most evaluators approximate it — always flagged as approximate in the UI.
+ * most evaluators approximate it. Always flagged as approximate in the UI.
  */
 
 const sortedByGpa = (bands: GradeBand[]) => [...bands].sort((a, b) => a.gpa - b.gpa);

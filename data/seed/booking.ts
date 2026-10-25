@@ -25,7 +25,7 @@ export const bookingSettings: BookingSettings = {
     eyebrow: { en: 'Free counselling', ne: 'निःशुल्क परामर्श' },
     title: { en: 'Book your free session', ne: 'आफ्नो निःशुल्क सत्र बुक गर्नुहोस्' },
     highlight: { en: 'free session', ne: 'निःशुल्क सत्र' },
-    subtitle: { en: 'Pick a counsellor and a time that suits you — in our office, on Zoom or by WhatsApp call.', ne: 'आफूलाई मिल्ने परामर्शदाता र समय छान्नुहोस् — कार्यालय, Zoom वा WhatsApp कलमार्फत।' },
+    subtitle: { en: 'Pick a counsellor and a time that suits you. In our office, on Zoom or by WhatsApp call.', ne: 'आफूलाई मिल्ने परामर्शदाता र समय छान्नुहोस्, कार्यालय, Zoom वा WhatsApp कलमार्फत।' },
     image: null,
   },
   min_notice_minutes: 120,
@@ -40,7 +40,7 @@ export const enquiryContent: EnquiryContent = {
     eyebrow: { en: 'Enquiry', ne: 'सोधपुछ' },
     title: { en: 'Tell us about your plans', ne: 'आफ्नो योजना बताउनुहोस्' },
     highlight: { en: 'your plans', ne: 'योजना' },
-    subtitle: { en: 'A few quick questions — a counsellor will get back to you within one working day.', ne: 'केही छोटा प्रश्न — परामर्शदाताले एक कार्यदिनभित्र सम्पर्क गर्नुहुनेछ।' },
+    subtitle: { en: 'A few quick questions. A counsellor will get back to you within one working day.', ne: 'केही छोटा प्रश्न, परामर्शदाताले एक कार्यदिनभित्र सम्पर्क गर्नुहुनेछ।' },
     image: null,
   },
   needs: [

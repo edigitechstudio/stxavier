@@ -5,7 +5,7 @@ import { env } from '@/lib/env';
 import { createServiceClient } from '@/lib/supabase/service';
 
 /**
- * Staff accounts use email + password, created by an admin — no sign-in emails involved.
+ * Staff accounts use email + password, created by an admin. No sign-in emails involved.
  * Students keep passwordless sign-in (email link / code, Google).
  */
 

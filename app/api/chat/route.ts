@@ -30,7 +30,7 @@ const fail = (code: Extract<ChatEvent, { type: 'error' }>['code'], status: numbe
 
 /**
  * AI assistant. Retrieves the most relevant pieces of the site's own content (BM25), then
- * streams an answer from the configured model — or, with no model configured, a
+ * streams an answer from the configured model. Or, with no model configured, a
  * retrieval-only answer. Response: newline-delimited JSON events (meta → text… → done).
  */
 export async function POST(req: Request) {

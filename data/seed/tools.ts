@@ -174,7 +174,7 @@ export const scholarships: Scholarship[] = [
   {
     id: 'manaaki', name: 'Manaaki New Zealand Scholarships', provider: 'New Zealand Government (MFAT)', countries: ['new-zealand'], levels: ['pg'], fields: ['any'],
     min_percent: null, coverage: 'full', amount: L('Tuition, living allowance, travel, insurance'),
-    summary: L('Government scholarships for eligible countries — confirm whether Nepali citizens are eligible in the current round.'),
+    summary: L('Government scholarships for eligible countries. Confirm whether Nepali citizens are eligible in the current round.'),
     deadline: L('Varies by round'), url: 'https://www.nzscholarships.govt.nz/', verified_on: null, sort: 5, published: true,
   },
   {
@@ -186,7 +186,7 @@ export const scholarships: Scholarship[] = [
   {
     id: 'uni-merit', name: 'University international merit scholarships', provider: 'Partner universities', countries: ['uk', 'australia', 'canada', 'usa', 'new-zealand', 'cyprus'], levels: ['diploma', 'ug', 'pg'], fields: ['any'],
     min_percent: 60, coverage: 'partial', amount: L('Typically 10–50% of tuition'),
-    summary: L('Many universities automatically reduce tuition for strong academic profiles — our counsellors match you to current offers.'),
+    summary: L('Many universities automatically reduce tuition for strong academic profiles. Our counsellors match you to current offers.'),
     deadline: L('With your application'), url: 'https://stxavier.com.np/en/contact', verified_on: null, sort: 7, published: true,
   },
 ];
@@ -242,7 +242,7 @@ export const gradingScales: GradingScale[] = [
   },
   {
     id: 'tu', name: L('Tribhuvan University (semester CGPA)', 'त्रिभुवन विश्वविद्यालय (सेमेस्टर CGPA)'),
-    description: L('Common 4.0 CGPA bands used in TU semester programmes. Some faculties use different scales — check your transcript.'),
+    description: L('Common 4.0 CGPA bands used in TU semester programmes. Some faculties use different scales. Check your transcript.'),
     max_gpa: 4,
     bands: [
       { grade: 'A', gpa: 4.0, min: 90, max: 100, remark: L('Distinction') },
@@ -276,7 +276,7 @@ export const toolContents: Record<string, ToolContent> = {
     hero: hero(['Study Abroad Eligibility Checker', 'विदेश अध्ययन योग्यता जाँच'], ['Eligibility Checker', 'योग्यता जाँच'], ['Answer 7 quick questions to see which countries and courses fit your profile.', '७ छोटा प्रश्नको उत्तर दिनुहोस् र तपाईंलाई मिल्ने देश र कोर्स हेर्नुहोस्।']),
     answer: L('The St. Xavier eligibility checker compares your study level, grades, English score, yearly budget and preferences with typical requirements for the UK, Australia, Canada, the USA, New Zealand, Cyprus and Japan, then ranks each country with a match score out of 100.'),
     sections: [
-      section('How is the match score calculated?', 'Budget carries the most weight (40%), followed by academic results (25%), English score (20%), your country preference (10%) and how strong the country is in your field (5%).', 'Thresholds are typical figures, not admission rules — every university sets its own requirements.'),
+      section('How is the match score calculated?', 'Budget carries the most weight (40%), followed by academic results (25%), English score (20%), your country preference (10%) and how strong the country is in your field (5%).', 'Thresholds are typical figures, not admission rules. Every university sets its own requirements.'),
       section('What should I do after seeing my results?', 'Book a free counselling session. A counsellor will check your documents, confirm real university requirements and look for scholarships that improve your options.'),
     ],
     updated: UPDATED,
@@ -295,22 +295,22 @@ export const toolContents: Record<string, ToolContent> = {
     answer: L('Nepali students can apply for fully funded government scholarships such as Chevening (UK), Australia Awards, Fulbright (USA) and MEXT (Japan), as well as partial university merit scholarships that reduce tuition by 10–50%. Filter the list to see which ones match your profile.'),
     sections: [
       section('How competitive are fully funded scholarships?', 'Government scholarships are highly competitive and usually require strong academics, leadership and sometimes work experience. University merit scholarships are easier to obtain and often awarded automatically with your offer.'),
-      section('Always check the official page', 'Eligibility and deadlines change every cycle. Each listing links to the official website — confirm details there before applying.'),
+      section('Always check the official page', 'Eligibility and deadlines change every cycle. Each listing links to the official website. Confirm details there before applying.'),
     ],
     updated: UPDATED,
   },
   'ielts-band-calculator': {
     hero: hero(['IELTS & PTE Score Calculator', 'IELTS र PTE स्कोर क्याल्कुलेटर'], ['Score Calculator', 'स्कोर क्याल्कुलेटर'], ['Calculate your overall band and see which requirements you meet.', 'समग्र ब्यान्ड निकाल्नुहोस् र कुन आवश्यकता पूरा हुन्छ हेर्नुहोस्।']),
-    answer: L('Your IELTS overall band is the average of Listening, Reading, Writing and Speaking, rounded to the nearest half band. An average ending in .25 rounds up to the next half band and .75 rounds up to the next whole band — so 6.25 becomes 6.5 and 6.75 becomes 7.0.'),
+    answer: L('Your IELTS overall band is the average of Listening, Reading, Writing and Speaking, rounded to the nearest half band. An average ending in .25 rounds up to the next half band and .75 rounds up to the next whole band. So 6.25 becomes 6.5 and 6.75 becomes 7.0.'),
     sections: [
       section('How is the PTE overall score calculated?', 'Pearson calculates the PTE Academic overall score from every item in the test, so it is not a simple average of the four skills. The PTE result here is an estimate for planning only.'),
-      section('What score do I need?', 'Most universities ask for IELTS 6.0 for undergraduate and 6.5 for postgraduate study, with minimum bands in each skill. Visa rules can differ from university requirements — the table below shows both.'),
+      section('What score do I need?', 'Most universities ask for IELTS 6.0 for undergraduate and 6.5 for postgraduate study, with minimum bands in each skill. Visa rules can differ from university requirements. The table below shows both.'),
     ],
     updated: UPDATED,
   },
   'gpa-percentage-converter': {
     hero: hero(['GPA to Percentage Converter (NEB & TU)', 'GPA देखि प्रतिशत रूपान्तरण (NEB र TU)'], ['GPA to Percentage', 'GPA देखि प्रतिशत'], ['Convert NEB and Tribhuvan University grades both ways.', 'NEB र त्रिभुवन विश्वविद्यालयको ग्रेड दुवैतर्फ रूपान्तरण गर्नुहोस्।']),
-    answer: L('NEB and Tribhuvan University report grades on a 4.0 scale. To convert a GPA to an approximate percentage, find the grade band your GPA falls in and interpolate between the band boundaries — for example, an NEB GPA of 3.4 is roughly 75%.'),
+    answer: L('NEB and Tribhuvan University report grades on a 4.0 scale. To convert a GPA to an approximate percentage, find the grade band your GPA falls in and interpolate between the band boundaries. For example, an NEB GPA of 3.4 is roughly 75%.'),
     sections: [
       section('Will universities use this exact conversion?', 'Not always. Many universities and credential evaluators use their own conversion tables, so treat these results as approximate and include your official transcript and grading key with applications.'),
     ],
@@ -320,7 +320,7 @@ export const toolContents: Record<string, ToolContent> = {
     hero: hero(['Study Abroad Visa Timeline Planner', 'विदेश अध्ययन भिसा समयरेखा योजनाकार'], ['Timeline Planner', 'समयरेखा योजनाकार'], ['Pick your intake and get a step-by-step plan with dates.', 'इन्टेक छान्नुहोस् र मितिसहित चरणबद्ध योजना पाउनुहोस्।']),
     answer: L('Start preparing about 10–12 months before your intake. Working backwards from the course start date, you should take your English test around 9 months before, apply around 7–8 months before, secure your enrolment document 4 months before and lodge your visa 2–3 months before departure.'),
     sections: [
-      section('What if some steps are already past?', 'Past dates are highlighted. You can often still make the intake by compressing steps — talk to a counsellor quickly, or consider the next intake.'),
+      section('What if some steps are already past?', 'Past dates are highlighted. You can often still make the intake by compressing steps. Talk to a counsellor quickly, or consider the next intake.'),
       section('Add it to your calendar', 'Download the plan as an .ics calendar file or add individual steps to Google Calendar so you never miss a deadline.'),
     ],
     updated: UPDATED,
@@ -337,7 +337,7 @@ export const toolContents: Record<string, ToolContent> = {
     hero: hero(['Compare Study Abroad Countries', 'विदेश अध्ययन देश तुलना'], ['Compare', 'तुलना'], ['Compare up to 3 countries side by side.', '३ वटासम्म देश एकैसाथ तुलना गर्नुहोस्।']),
     answer: L('Compare countries on tuition, living costs, part-time work rights, post-study work options, intakes and visa processing time. For most Nepali students the deciding factors are total cost, work rights during study and post-study work opportunities.'),
     sections: [
-      section('Which country is cheapest to study in?', 'Among our destinations, Cyprus and Japan usually have the lowest total cost, while the USA, the UK and Australia are usually the most expensive. Your course and city change this a lot — use the cost calculator for your exact case.'),
+      section('Which country is cheapest to study in?', 'Among our destinations, Cyprus and Japan usually have the lowest total cost, while the USA, the UK and Australia are usually the most expensive. Your course and city change this a lot. Use the cost calculator for your exact case.'),
     ],
     updated: UPDATED,
   },
@@ -357,7 +357,7 @@ export const toolsConfig: ToolsConfig = {
     eyebrow: L('Free Tools', 'निःशुल्क उपकरण'),
     title: L('Free study abroad tools', 'निःशुल्क विदेश अध्ययन उपकरण'),
     highlight: L('tools', 'उपकरण'),
-    subtitle: L('Plan costs, check eligibility, convert grades and build your visa timeline — free.', 'खर्च योजना, योग्यता जाँच, ग्रेड रूपान्तरण र भिसा समयरेखा — निःशुल्क।'),
+    subtitle: L('Plan costs, check eligibility, convert grades and build your visa timeline. Free.', 'खर्च योजना, योग्यता जाँच, ग्रेड रूपान्तरण र भिसा समयरेखा, निःशुल्क।'),
     image: null,
   },
   fields: [

@@ -27,7 +27,7 @@ const save = (s: Stored) => {
   try {
     sessionStorage.setItem(STORE, JSON.stringify(s));
   } catch {
-    /* storage unavailable — the chat still works for this page view */
+    /* storage unavailable, the chat still works for this page view */
   }
 };
 

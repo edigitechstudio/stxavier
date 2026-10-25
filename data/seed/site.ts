@@ -2,7 +2,7 @@ import type { Accreditation, Office, SiteSettings, Stat } from '@/types/content'
 
 /**
  * Fallback content used when Supabase is not configured, and the source for `npm run seed`.
- * Once seeded, edit this content in Supabase (admin dashboard in Phase 6) — not here.
+ * Once seeded, edit this content in Supabase (admin dashboard in Phase 6). Not here.
  * Search for "TODO:" to find every value that still needs real client data.
  */
 
@@ -31,8 +31,8 @@ export const siteSettings: SiteSettings = {
   // TODO: confirm the intake and deadline the countdown should target.
   next_intake: { label: { en: 'September 2027 intake', ne: 'सेप्टेम्बर २०२७ इन्टेक' }, deadline: '2027-06-30' },
   announcement: {
-    en: 'Applications open for 2027 intakes — book a free counselling session',
-    ne: '२०२७ इन्टेकका लागि आवेदन खुला — निःशुल्क परामर्श बुक गर्नुहोस्',
+    en: 'Applications open for 2027 intakes. Book a free counselling session',
+    ne: '२०२७ इन्टेकका लागि आवेदन खुला, निःशुल्क परामर्श बुक गर्नुहोस्',
   },
   updated_at: '2026-10-15',
 };

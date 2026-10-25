@@ -28,7 +28,7 @@ export const testPrepDetails: Record<string, TestPrepDetails> = {
     fee: null,
     mode: 'blended',
     features: [L('Weekly full-length mock tests'), L('One-to-one Speaking practice'), L('Writing correction with band feedback'), L('Computer-delivered IELTS practice'), L('Free test registration support')],
-    sources: [{ label: 'IELTS — Test format', url: 'https://ielts.org/take-a-test/test-types/ielts-academic-test', accessed: ACCESSED }],
+    sources: [{ label: 'IELTS: Test format', url: 'https://ielts.org/take-a-test/test-types/ielts-academic-test', accessed: ACCESSED }],
   },
   pte: {
     overview: L(
@@ -61,11 +61,11 @@ export const testPrepDetails: Record<string, TestPrepDetails> = {
     fee: null,
     mode: 'blended',
     features: [L('Full-length practice tests'), L('Academic vocabulary building'), L('Integrated task strategies')],
-    sources: [{ label: 'ETS — TOEFL iBT', url: 'https://www.ets.org/toefl/test-takers/ibt/about.html', accessed: ACCESSED }],
+    sources: [{ label: 'ETS: TOEFL iBT', url: 'https://www.ets.org/toefl/test-takers/ibt/about.html', accessed: ACCESSED }],
   },
   japanese: {
     overview: L(
-      'Our Japanese language classes prepare students for JLPT and NAT-TEST levels N5 and N4 — the level most Japanese language schools require for the Certificate of Eligibility. Classes cover hiragana, katakana, kanji, grammar, listening and interview practice.',
+      'Our Japanese language classes prepare students for JLPT and NAT-TEST levels N5 and N4. The level most Japanese language schools require for the Certificate of Eligibility. Classes cover hiragana, katakana, kanji, grammar, listening and interview practice.',
     ),
     format: [
       { section: 'JLPT N5', duration: '≈ 105 min', detail: L('Vocabulary, grammar & reading, and listening.') },
@@ -77,13 +77,13 @@ export const testPrepDetails: Record<string, TestPrepDetails> = {
     fee: null,
     mode: 'onsite',
     features: [L('Native-level pronunciation practice'), L('Study-hours certificate for your COE'), L('School interview preparation'), L('Monthly mock exams')],
-    sources: [{ label: 'JLPT — Official site', url: 'https://www.jlpt.jp/e/', accessed: ACCESSED }],
+    sources: [{ label: 'JLPT: Official site', url: 'https://www.jlpt.jp/e/', accessed: ACCESSED }],
   },
 };
 
 export const serviceDetails: Record<string, NonNullable<Service['details']>> = {
   'study-abroad-counselling': {
-    intro: L('Our study abroad counselling is free, one-to-one and honest. We assess your academics, budget and goals, then recommend countries, courses and universities that genuinely fit — and guide you through applications, scholarships and visas.'),
+    intro: L('Our study abroad counselling is free, one-to-one and honest. We assess your academics, budget and goals, then recommend countries, courses and universities that genuinely fit. And guide you through applications, scholarships and visas.'),
     points: [
       B('Profile assessment', 'We review your grades, gap years, English level and budget to set realistic options.'),
       B('Country & course selection', 'Compare destinations on cost, work rights and career outcomes.'),
@@ -110,7 +110,7 @@ export const serviceDetails: Record<string, NonNullable<Service['details']>> = {
   'test-registration': {
     intro: L('We register you for IELTS, PTE, TOEFL and JLPT/NAT on the right date, at the right centre and in the right format for your university and visa.'),
     points: [
-      B('Right test, right format', 'Academic vs General, paper vs computer — we confirm what your institution accepts.'),
+      B('Right test, right format', 'Academic vs General, paper vs computer. We confirm what your institution accepts.'),
       B('Date planning', 'Book a date that leaves time for results before application deadlines.'),
       B('Hassle-free payment', 'We handle the registration process with you.'),
     ],

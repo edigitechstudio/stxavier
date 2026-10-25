@@ -11,7 +11,7 @@ import type { BlogFrontmatter, BlogPostMeta } from '@/types/trust';
 
 /**
  * Blog repository. Two sources, merged by slug:
- *   - Posts written in the dashboard (/admin/cms/blog → table blog_posts) — these win.
+ *   - Posts written in the dashboard (/admin/cms/blog → table blog_posts). These win.
  *   - MDX files in content/blog: <slug>.mdx (English) and optional <slug>.ne.mdx (Nepali).
  * Pages only use listPosts / getPost.
  */
@@ -62,7 +62,7 @@ async function readPost(slug: string, locale: string): Promise<{ meta: BlogPostM
 }
 
 /** All published posts for a locale, newest first. Drafts appear only in development. */
-/** Posts written in the dashboard (drafts included — callers filter). */
+/** Posts written in the dashboard (drafts included, callers filter). */
 export async function blogRows(): Promise<BlogRow[]> {
   if (!isSupabaseConfigured) return devContent().blog;
   const { data, error } = await createPublicClient().from('blog_posts').select('*');

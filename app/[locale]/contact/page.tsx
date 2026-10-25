@@ -91,7 +91,7 @@ export default async function ContactPage() {
           {head && (
             <section aria-labelledby="office-title" className="grid gap-5">
               <h2 id="office-title" className="section-title">{l(head.name, locale)}</h2>
-              {/* NAP — must match the Google Business Profile exactly. */}
+              {/* NAP, must match the Google Business Profile exactly. */}
               <address className="grid gap-3 not-italic">
                 <p className="flex gap-3"><MapPin size={18} className="mt-1 shrink-0 text-[var(--link)]" aria-hidden /> {site.name}, {l(head.street, locale)}, {head.locality}, Nepal</p>
                 <p className="flex gap-3"><Phone size={18} className="mt-1 shrink-0 text-[var(--link)]" aria-hidden /> <a href={`tel:${head.phone}`}>{head.phone}</a></p>

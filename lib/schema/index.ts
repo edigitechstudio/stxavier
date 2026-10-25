@@ -72,7 +72,7 @@ export function organizationSchema(site: SiteSettings, offices: Office[], locale
       }),
       openingHoursSpecification: openingHours(head),
     }),
-    // Only real Google review data — never a made-up rating.
+    // Only real Google review data. Never a made-up rating.
     ...(rating && { aggregateRating: { '@type': 'AggregateRating', ratingValue: rating.value, reviewCount: rating.count, bestRating: 5 } }),
   };
   return ctx(node as unknown as EducationalOrganization);

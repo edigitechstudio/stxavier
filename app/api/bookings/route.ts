@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   if (!(await verifyTurnstile(b.turnstile_token, ip))) return Response.json({ error: 'bot_check_failed' }, { status: 403 });
   if (!bookingStoreAvailable()) return Response.json({ error: 'not_configured' }, { status: 503 });
 
-  // Re-validate against live availability — never trust the client's slot.
+  // Re-validate against live availability. Never trust the client's slot.
   const { input, settings, team } = await slotInput(b.counsellor, b.mode);
   const slot = findSlot(input, b.start);
   if (!slot) return Response.json({ error: 'conflict' }, { status: 409 });

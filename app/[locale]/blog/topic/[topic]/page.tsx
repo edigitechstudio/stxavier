@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/blog/top
   if (!BLOG_TOPICS.includes(topic as BlogTopic)) return {};
   const [locale, t, tm] = await Promise.all([currentLocale(), getTranslations('trust.blog'), getTranslations('meta')]);
   const label = t(`topics.${topic as BlogTopic}`);
-  return pageMetadata({ locale, path: `/blog/topic/${topic}`, title: `${label} — ${tm('crumbBlog')}`, description: tm('blogDesc') });
+  return pageMetadata({ locale, path: `/blog/topic/${topic}`, title: `${label}: ${tm('crumbBlog')}`, description: tm('blogDesc') });
 }
 
 export default async function TopicPage({ params }: PageProps<'/[locale]/blog/topic/[topic]'>) {

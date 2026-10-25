@@ -74,7 +74,7 @@ async function Leads({ searchParams }: { searchParams: PageProps<'/admin/leads'>
       </form>
 
       <p className="muted admin-count" role="status">
-        {leads.length === LEAD_LIMIT ? `Showing the latest ${LEAD_LIMIT} — narrow the filters or export CSV for all.` : `${leads.length} lead${leads.length === 1 ? '' : 's'}`}
+        {leads.length === LEAD_LIMIT ? `Showing the latest ${LEAD_LIMIT}. Narrow the filters or export CSV for all.` : `${leads.length} lead${leads.length === 1 ? '' : 's'}`}
       </p>
 
       <div className="table-wrap admin-card">
@@ -100,8 +100,8 @@ async function Leads({ searchParams }: { searchParams: PageProps<'/admin/leads'>
                   <small>{l.phone}{l.email ? ` · ${l.email}` : ''}</small>
                 </td>
                 <td>{LEAD_SOURCE_LABEL[l.source]}</td>
-                <td className="muted">{summary(l.payload) || '—'}</td>
-                <td className="muted">{[l.utm_source, l.utm_campaign].filter(Boolean).join(' / ') || '—'}</td>
+                <td className="muted">{summary(l.payload) || '-'}</td>
+                <td className="muted">{[l.utm_source, l.utm_campaign].filter(Boolean).join(' / ') || '-'}</td>
                 <td><span className={`badge is-${l.status}`}>{LEAD_STATUS_LABEL[l.status]}</span></td>
                 <td className="nowrap">{fmtDateTime(l.created_at)}</td>
               </tr>

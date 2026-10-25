@@ -52,7 +52,7 @@ export default async function EventPage({ params }: PageProps<'/[locale]/events/
       <div className="wrap page-body">
         <div className="content-layout">
           <article>
-            {e.is_placeholder && <p className="draft-banner">TODO — sample event, hidden in production.</p>}
+            {e.is_placeholder && <p className="draft-banner">TODO: sample event, hidden in production.</p>}
             <div className="tile-grid">
               <div className="tile"><h3 className="flex items-center gap-2"><Clock size={18} aria-hidden /> {t('when')}</h3><p>{when}</p></div>
               <div className="tile"><h3 className="flex items-center gap-2">{e.venue ? <MapPin size={18} aria-hidden /> : <Video size={18} aria-hidden />} {t('where')}</h3><p>{where}</p></div>

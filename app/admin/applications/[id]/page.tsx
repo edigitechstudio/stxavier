@@ -153,7 +153,7 @@ async function Detail({ params, searchParams }: Pick<PageProps<'/admin/applicati
             <ul className="note-list">
               {history.map((h) => (
                 <li key={h.id}>
-                  <p><strong>{STAGE_LABEL[h.to_stage]}</strong>{h.note && <> — {h.note}</>}</p>
+                  <p><strong>{STAGE_LABEL[h.to_stage]}</strong>{h.note && <>: {h.note}</>}</p>
                   <small className="muted">{h.changed_by_name ?? 'Staff'} · {fmtDateTime(h.created_at)}</small>
                 </li>
               ))}

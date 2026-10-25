@@ -36,7 +36,7 @@ export function BlogList({ posts, topics, countries, initialTopic = '' }: { post
         <label className="field !flex-row items-center gap-2">
           {t('country')}
           <select className="control !w-auto" value={country} onChange={(e) => setCountry(e.target.value)}>
-            <option value="">—</option>
+            <option value="">-</option>
             {countries.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </label>

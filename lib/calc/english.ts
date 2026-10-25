@@ -21,7 +21,7 @@ export function ieltsOverall(listening: number, reading: number, writing: number
 
 /**
  * PTE Academic's overall score is calculated by Pearson from every item, not by averaging the
- * four communicative skills — so this is only an ESTIMATE for planning.
+ * four communicative skills. So this is only an ESTIMATE for planning.
  */
 export function pteOverallEstimate(listening: number, reading: number, speaking: number, writing: number): number {
   const scores = [listening, reading, speaking, writing];

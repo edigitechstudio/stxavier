@@ -101,8 +101,8 @@ export default async function DestinationsPage() {
                     <th scope="row">
                       <span className="inline-flex items-center gap-2"><Flag code={d.iso2} /> {l(d.name, locale)}</span>
                     </th>
-                    <td>{l(d.key_facts.intakes, locale) ?? '—'}</td>
-                    <td>{l(d.key_facts.work_rights, locale) ?? '—'}</td>
+                    <td>{l(d.key_facts.intakes, locale) ?? '-'}</td>
+                    <td>{l(d.key_facts.work_rights, locale) ?? '-'}</td>
                     <td><Link href={`/study-in/${d.slug}`}>{t('viewGuide')} →</Link></td>
                   </tr>
                 ))}

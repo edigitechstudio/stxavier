@@ -5,12 +5,12 @@ export const chatContent: ChatContent = {
   enabled: true,
   assistant_name: { en: 'St. Xavier Assistant', ne: 'सेन्ट जेभियर सहायक' },
   greeting: {
-    en: 'Namaste! I’m St. Xavier’s AI assistant. Ask me about studying abroad — costs, visas, test prep or our services.',
-    ne: 'नमस्ते! म सेन्ट जेभियरको AI सहायक हुँ। विदेश अध्ययन — खर्च, भिसा, परीक्षा तयारी वा हाम्रा सेवाबारे सोध्नुहोस्।',
+    en: 'Namaste! I’m St. Xavier’s AI assistant. Ask me about studying abroad: costs, visas, test prep or our services.',
+    ne: 'नमस्ते! म सेन्ट जेभियरको AI सहायक हुँ। विदेश अध्ययन, खर्च, भिसा, परीक्षा तयारी वा हाम्रा सेवाबारे सोध्नुहोस्।',
   },
   disclaimer: {
-    en: 'AI assistant — answers come from our website and may be incomplete. For advice on your case, talk to a counsellor.',
-    ne: 'AI सहायक — जवाफ हाम्रो वेबसाइटबाट आउँछ र अपूर्ण हुन सक्छ। आफ्नो अवस्थाबारे सल्लाहका लागि परामर्शदातासँग कुरा गर्नुहोस्।',
+    en: 'AI assistant: answers come from our website and may be incomplete. For advice on your case, talk to a counsellor.',
+    ne: 'AI सहायक, जवाफ हाम्रो वेबसाइटबाट आउँछ र अपूर्ण हुन सक्छ। आफ्नो अवस्थाबारे सल्लाहका लागि परामर्शदातासँग कुरा गर्नुहोस्।',
   },
   suggestions: [
     { en: 'How much does it cost to study in Australia?', ne: 'अष्ट्रेलियामा पढ्न कति खर्च लाग्छ?' },

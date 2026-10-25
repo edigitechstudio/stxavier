@@ -14,7 +14,7 @@ import { DEMO_COOKIE, demoAuth } from './mode';
  * inside a <Suspense> boundary (or a route handler / server action). Memoised per request.
  */
 export const getViewer = cache(async (): Promise<Viewer | null> => {
-  // Everything behind a session is per-request (clock reads, private data) — never prerendered.
+  // Everything behind a session is per-request (clock reads, private data). Never prerendered.
   await connection();
   if (demoAuth) {
     const id = (await cookies()).get(DEMO_COOKIE)?.value;
@@ -26,7 +26,7 @@ export const getViewer = cache(async (): Promise<Viewer | null> => {
   const supabase = await createSessionClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser(); // verifies the JWT with Supabase — never trust getSession() on the server
+  } = await supabase.auth.getUser(); // verifies the JWT with Supabase. Never trust getSession() on the server
   if (!user) return null;
   const { data: profile } = await supabase.from('profiles').select('role, full_name, email').eq('id', user.id).maybeSingle();
   const role = (profile?.role ?? 'student') as UserRole;
@@ -46,9 +46,9 @@ export function nameFromEmail(email: string | null | undefined): string {
   return words.map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase()).join(' ');
 }
 
-export const isStaff =(v: Viewer | null): v is Viewer => !!v && (v.role === 'counsellor' || v.role === 'admin');
+export const isStaff = (v: Viewer | null): v is Viewer => !!v && (v.role === 'counsellor' || v.role === 'admin');
 
-/** Students (and staff previewing) — redirects to the localized portal login. */
+/** Students (and staff previewing), redirects to the localized portal login. */
 export async function requireViewer(locale: string, next = `/${locale}/portal`): Promise<Viewer> {
   const v = await getViewer();
   if (!v) redirect(`/${locale}/portal/login?next=${encodeURIComponent(next)}`);

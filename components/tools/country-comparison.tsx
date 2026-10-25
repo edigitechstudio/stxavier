@@ -39,14 +39,14 @@ export function CountryComparison({ destinations, rates }: { destinations: ToolD
   const cols = selected.map((s) => destinations.find((d) => d.slug === s)!).filter(Boolean);
   const money = (n: number, c: string) => fmt.money(n, c);
   const rows: { label: string; value: (d: ToolDestination) => string }[] = [
-    { label: t('firstYear'), value: (d) => { const v = d.cost ? firstYearMidNpr(d.cost, 'pg', 'major', rates.rates[d.cost.currency] ?? null) : null; return v ? fmt.npr(v) : '—'; } },
-    { label: t('rows.tuition'), value: (d) => (d.cost?.tuition.pg ? `${money(d.cost.tuition.pg[0], d.cost.currency)} – ${money(d.cost.tuition.pg[1], d.cost.currency)}` : '—') },
-    { label: t('rows.living'), value: (d) => (d.cost ? money(d.cost.living_monthly.major, d.cost.currency) : '—') },
-    { label: t('rows.work'), value: (d) => d.facts.work ?? '—' },
-    { label: t('rows.postStudy'), value: (d) => d.facts.postStudy ?? '—' },
-    { label: t('rows.pr'), value: (d) => d.facts.pr ?? '—' },
-    { label: t('rows.intakes'), value: (d) => d.facts.intakes ?? '—' },
-    { label: t('rows.processing'), value: (d) => d.facts.processing ?? '—' },
+    { label: t('firstYear'), value: (d) => { const v = d.cost ? firstYearMidNpr(d.cost, 'pg', 'major', rates.rates[d.cost.currency] ?? null) : null; return v ? fmt.npr(v) : '-'; } },
+    { label: t('rows.tuition'), value: (d) => (d.cost?.tuition.pg ? `${money(d.cost.tuition.pg[0], d.cost.currency)} – ${money(d.cost.tuition.pg[1], d.cost.currency)}` : '-') },
+    { label: t('rows.living'), value: (d) => (d.cost ? money(d.cost.living_monthly.major, d.cost.currency) : '-') },
+    { label: t('rows.work'), value: (d) => d.facts.work ?? '-' },
+    { label: t('rows.postStudy'), value: (d) => d.facts.postStudy ?? '-' },
+    { label: t('rows.pr'), value: (d) => d.facts.pr ?? '-' },
+    { label: t('rows.intakes'), value: (d) => d.facts.intakes ?? '-' },
+    { label: t('rows.processing'), value: (d) => d.facts.processing ?? '-' },
   ];
 
   return (

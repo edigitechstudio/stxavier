@@ -318,11 +318,11 @@ function Wizard({ counsellors, modeNotes, officeAddress, preset }: Props & { pre
             </div>
             <div>
               <dt>{t('summary.mode')}</dt>
-              <dd>{mode ? t(`modes.${mode}`) : '—'}</dd>
+              <dd>{mode ? t(`modes.${mode}`) : '-'}</dd>
             </div>
             <div>
               <dt>{t('summary.when')}</dt>
-              <dd>{slot ? whenLabel(slot.start) : '—'}</dd>
+              <dd>{slot ? whenLabel(slot.start) : '-'}</dd>
             </div>
           </dl>
           {slot && counsellor === 'any' && <p className="booking-hint">{t('anyAssigned')}: {nameOf(slot.counsellor)}</p>}
@@ -338,7 +338,7 @@ function DoneView({ done, reset, whenLabel, modeNote, officeAddress }: { done: D
   const t = useTranslations('booking');
   const event: CalendarEvent = {
     uid: `${done.reference}@stxavier.com.np`,
-    title: `${t('email.title')} — St. Xavier (${done.reference})`,
+    title: `${t('email.title')} | St. Xavier (${done.reference})`,
     description: `${t(`modes.${done.mode}`)} ${t('with', { name: done.counsellor.name })}. ${modeNote}\n${t('reference')}: ${done.reference}`,
     location: done.mode === 'office' ? officeAddress : t(`modes.${done.mode}`),
     start: done.start,

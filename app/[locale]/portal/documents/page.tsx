@@ -32,7 +32,7 @@ async function Documents({ locale, searchParams }: { locale: string; searchParam
   const preset = typeof sp.type === 'string' ? sp.type : undefined;
   const statusLabel = (s: DocStatus) => t(`status.${s}`);
   const types = p.content.document_types.map((d) => ({ value: d.key, label: l(d.label, locale) ?? d.key }));
-  const apps = p.apps.map((a) => ({ value: a.id, label: [a.university, p.countryName(a.country)].filter(Boolean).join(' — ') }));
+  const apps = p.apps.map((a) => ({ value: a.id, label: [a.university, p.countryName(a.country)].filter(Boolean).join(', ') }));
 
   return (
     <PortalShell active="documents" viewer={p.viewer} unread={p.unread} locale={locale}>

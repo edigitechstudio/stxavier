@@ -25,7 +25,7 @@ export function sniffMime(b: Uint8Array): AllowedMime | null {
   return null;
 }
 
-/** PDF features that can run code or carry payloads — never needed for an admission document. */
+/** PDF features that can run code or carry payloads. Never needed for an admission document. */
 const PDF_ACTIVE = /\/(?:JavaScript|JS|Launch|EmbeddedFile|RichMedia|XFA|OpenAction|AA)\b/;
 
 export function hasActivePdfContent(b: Uint8Array) {

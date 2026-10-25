@@ -7,12 +7,12 @@ type CookieToSet = { name: string; value: string; options?: Parameters<NextRespo
 
 /**
  * Refreshes the Supabase auth session and reports whether someone appears signed in. This is an
- * optimistic check for redirects only — pages and actions still verify the user and their role.
+ * optimistic check for redirects only. Pages and actions still verify the user and their role.
  *
  * Call it BEFORE building the response: refreshed tokens are written onto `req.cookies`, so a
  * response created afterwards (NextResponse.next({ request }) or next-intl) forwards them to the
  * page. Supabase rotates refresh tokens, so a page that still saw the old cookies would fail to
- * refresh, look signed out and redirect to login — an endless loop. Then apply `cookies` to the
+ * refresh, look signed out and redirect to login. An endless loop. Then apply `cookies` to the
  * response with `applyCookies` so the browser stores the new tokens too.
  */
 export async function refreshSession(req: NextRequest): Promise<{ signedIn: boolean; cookies: CookieToSet[] }> {

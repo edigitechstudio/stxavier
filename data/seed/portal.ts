@@ -11,7 +11,7 @@ export const portalContent: PortalContent = {
     { key: 'passport', label: { en: 'Passport (bio page)', ne: 'राहदानी (विवरण पृष्ठ)' }, hint: { en: 'Valid for at least 6 months beyond your course start.', ne: 'कोर्स सुरु भएपछि कम्तीमा ६ महिना मान्य।' }, required: true },
     { key: 'academic', label: { en: 'Academic transcripts & certificates', ne: 'शैक्षिक ट्रान्सक्रिप्ट र प्रमाणपत्र' }, hint: { en: 'SEE, +2 and bachelor’s documents as applicable.', ne: 'SEE, +२ र स्नातक कागजात।' }, required: true },
     { key: 'english', label: { en: 'English test result (IELTS / PTE / TOEFL)', ne: 'अंग्रेजी परीक्षा नतिजा (IELTS / PTE / TOEFL)' }, hint: null, required: true },
-    { key: 'sop', label: { en: 'Statement of purpose', ne: 'उद्देश्य विवरण (SOP)' }, hint: { en: 'Your draft — your counsellor will review it.', ne: 'तपाईंको मस्यौदा — परामर्शदाताले समीक्षा गर्नुहुनेछ।' }, required: true },
+    { key: 'sop', label: { en: 'Statement of purpose', ne: 'उद्देश्य विवरण (SOP)' }, hint: { en: 'Your draft. Your counsellor will review it.', ne: 'तपाईंको मस्यौदा, परामर्शदाताले समीक्षा गर्नुहुनेछ।' }, required: true },
     { key: 'financial', label: { en: 'Financial documents', ne: 'आर्थिक कागजात' }, hint: { en: 'Bank statement, balance certificate, income sources.', ne: 'बैंक स्टेटमेन्ट, ब्यालेन्स प्रमाणपत्र, आय स्रोत।' }, required: true },
     { key: 'recommendation', label: { en: 'Recommendation letters', ne: 'सिफारिस पत्र' }, hint: null, required: false },
     { key: 'cv', label: { en: 'CV / résumé', ne: 'बायोडाटा (CV)' }, hint: null, required: false },
@@ -24,7 +24,7 @@ export const portalContent: PortalContent = {
       title: { en: 'Packing list', ne: 'सामान सूची' },
       countries: [],
       items: [
-        { en: 'Passport, visa grant letter, offer letter and CAS/CoE — originals plus copies in your hand luggage', ne: 'राहदानी, भिसा पत्र, अफर लेटर र CAS/CoE — सक्कल र प्रतिलिपि ह्यान्ड लगेजमा' },
+        { en: 'Passport, visa grant letter, offer letter and CAS/CoE. Originals plus copies in your hand luggage', ne: 'राहदानी, भिसा पत्र, अफर लेटर र CAS/CoE, सक्कल र प्रतिलिपि ह्यान्ड लगेजमा' },
         { en: 'Academic certificates, English test result and financial documents', ne: 'शैक्षिक प्रमाणपत्र, अंग्रेजी परीक्षा नतिजा र आर्थिक कागजात' },
         { en: 'Some local currency or a travel card for the first days', ne: 'पहिलो केही दिनका लागि स्थानीय मुद्रा वा ट्राभल कार्ड' },
         { en: 'Prescription medicines with a doctor’s letter', ne: 'डाक्टरको पत्रसहित आवश्यक औषधि' },
@@ -50,7 +50,7 @@ export const portalContent: PortalContent = {
       title: { en: 'Accommodation tips', ne: 'आवास सुझाव' },
       countries: [],
       items: [
-        { en: 'Apply early for university halls — places fill quickly', ne: 'विश्वविद्यालय होस्टलका लागि छिट्टै आवेदन दिनुहोस् — सिट चाँडै भरिन्छ' },
+        { en: 'Apply early for university halls. Places fill quickly', ne: 'विश्वविद्यालय होस्टलका लागि छिट्टै आवेदन दिनुहोस्, सिट चाँडै भरिन्छ' },
         { en: 'Never pay a deposit for a private room you have not verified', ne: 'प्रमाणित नगरेको निजी कोठाका लागि धरौटी नतिर्नुहोस्' },
         { en: 'Read the contract: bills, notice period and deposit protection', ne: 'सम्झौता पढ्नुहोस्: बिल, सूचना अवधि र धरौटी सुरक्षा' },
         { en: 'Budget for the first month’s rent plus deposit', ne: 'पहिलो महिनाको भाडा र धरौटीको बजेट राख्नुहोस्' },

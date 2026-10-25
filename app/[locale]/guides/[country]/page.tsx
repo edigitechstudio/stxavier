@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/guides/[
   const [locale, d, t] = await Promise.all([currentLocale(), getDestination(country), getTranslations('meta')]);
   if (!d) return {};
   const name = l(d.name, locale) ?? d.slug;
-  // Printable copy of the country page — keep it out of search to avoid duplicate content.
+  // Printable copy of the country page. Keep it out of search to avoid duplicate content.
   return pageMetadata({ locale, path: `/guides/${d.slug}`, title: t('guide', { country: name }), description: l(d.summary, locale) ?? '', noindex: true });
 }
 
@@ -138,7 +138,7 @@ export default async function GuidePage({ params }: PageProps<'/[locale]/guides/
               <section className="guide-section">
                 <h2>{t('scholarships', { country: name })}</h2>
                 <ul className="guide-list">
-                  {det.scholarships.map((s) => <li key={s.name}><strong>{s.name}</strong> — {loc(s.detail)}</li>)}
+                  {det.scholarships.map((s) => <li key={s.name}><strong>{s.name}</strong>: {loc(s.detail)}</li>)}
                 </ul>
               </section>
             )}

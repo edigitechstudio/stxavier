@@ -1,6 +1,6 @@
 /**
  * Plain, robust HTML emails (tables + inline styles render reliably across email clients).
- * Every interpolated value is escaped — form input must never become markup.
+ * Every interpolated value is escaped. Form input must never become markup.
  */
 
 export function esc(value: unknown): string {
@@ -94,7 +94,7 @@ export function bookingNotification(b: BookingInfo): Email {
     ['Mode', b.modeLabel],
     ['Notes', b.notes],
   ]);
-  return { subject: `New booking ${b.reference}: ${b.name} — ${b.whenLabel}`, html: layout('New counselling booking', r.html, FOOTER), text: `New counselling booking\n\n${r.text}` };
+  return { subject: `New booking ${b.reference}: ${b.name}, ${b.whenLabel}`, html: layout('New counselling booking', r.html, FOOTER), text: `New counselling booking\n\n${r.text}` };
 }
 
 /** Free guide delivery (exit-intent offer). */

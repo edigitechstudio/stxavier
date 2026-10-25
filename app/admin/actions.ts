@@ -29,7 +29,7 @@ import { BOOKING_MODES } from '@/types/booking';
 import { APP_STAGES, DOC_STATUSES, LEAD_STATUSES } from '@/types/portal';
 
 /**
- * Admin server actions. Each one re-verifies the signed-in user's role before touching data —
+ * Admin server actions. Each one re-verifies the signed-in user's role before touching data -
  * server actions are public endpoints, so page-level protection is not enough.
  */
 async function staff() {
@@ -201,13 +201,13 @@ export async function changeRole(f: FormData) {
   refresh();
 }
 
-// ---- Staff accounts (email + password, created here — no sign-in emails) -------------------
+// ---- Staff accounts (email + password, created here. No sign-in emails) -------------------
 export type StaffFormState = { ok?: string; error?: string } | null;
 const firstIssue = (e: z.ZodError) => e.issues[0]?.message ?? 'Please check the form.';
 
 export async function addStaff(_prev: StaffFormState, f: FormData): Promise<StaffFormState> {
   if (!isAdmin(await getViewer())) return { error: 'Only admins can add staff.' };
-  if (demoAuth) return { error: 'Not available in demo mode — connect Supabase first.' };
+  if (demoAuth) return { error: 'Not available in demo mode. Connect Supabase first.' };
   const parsed = z
     .object({ name: z.string().trim().min(2, 'Enter their name.').max(100), email: staffEmail, role: z.enum(['counsellor', 'admin']), password })
     .safeParse({ name: f.get('name'), email: f.get('email'), role: f.get('role'), password: f.get('password') });

@@ -44,7 +44,7 @@ export function UiTextForm({ ns, rows }: { ns: string; rows: UiRow[] }) {
         ) : state.saved ? (
           <p className="cms-saved" role="status"><CheckCircle2 size={16} aria-hidden /> Saved and published</p>
         ) : (
-          <p className="muted">Words in {'{braces}'} are filled in automatically — keep them.</p>
+          <p className="muted">Words in {'{braces}'} are filled in automatically. Keep them.</p>
         )}
         <button type="submit" className="btn btn-primary" disabled={pending}>
           {pending ? <Loader2 size={16} className="animate-spin" aria-hidden /> : <Save size={16} aria-hidden />} Save & publish

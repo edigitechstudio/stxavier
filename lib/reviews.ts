@@ -18,7 +18,7 @@ type PlacesResponse = {
 
 /**
  * Real Google reviews via the Places API (New), cached for a day. Returns null when
- * GOOGLE_PLACES_API_KEY / GOOGLE_PLACE_ID are not configured or the API fails — the widget and
+ * GOOGLE_PLACES_API_KEY / GOOGLE_PLACE_ID are not configured or the API fails. The widget and
  * AggregateRating schema then simply don't render (we never show made-up ratings).
  */
 export async function getGoogleReviews(locale: string): Promise<GoogleReviews | null> {

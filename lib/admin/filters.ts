@@ -7,7 +7,7 @@ const get = (p: Params, k: string) => {
 };
 const isoDay = (v: string | undefined, end = false) => (v && /^\d{4}-\d{2}-\d{2}$/.test(v) ? new Date(`${v}T${end ? '23:59:59' : '00:00:00'}+05:45`).toISOString() : undefined);
 
-/** Lead list filters from the URL — shared by the leads page and the CSV export. */
+/** Lead list filters from the URL. Shared by the leads page and the CSV export. */
 export function parseLeadFilter(p: Params): LeadFilter & { fromDay?: string; toDay?: string } {
   const status = get(p, 'status');
   const source = get(p, 'source');

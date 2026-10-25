@@ -63,7 +63,7 @@ export default async function CounsellorPage({ params }: PageProps<'/[locale]/te
             <SmartImage src={c.photo ?? ''} alt={c.name} fill sizes="360px" />
           </div>
           <div>
-            {c.is_placeholder && <p className="draft-banner">TODO — sample profile, hidden in production.</p>}
+            {c.is_placeholder && <p className="draft-banner">TODO: sample profile, hidden in production.</p>}
             <p className="answer">{l(c.bio, locale)}</p>
             <dl>
               {c.years_experience ? (

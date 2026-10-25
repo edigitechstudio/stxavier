@@ -51,8 +51,8 @@ export function AddStaffForm() {
         <label>
           Role
           <select name="role" defaultValue="counsellor">
-            <option value="counsellor">Counsellor — leads, bookings, applications</option>
-            <option value="admin">Admin — everything, incl. staff & website content</option>
+            <option value="counsellor">Counsellor: leads, bookings, applications</option>
+            <option value="admin">Admin: everything, incl. staff & website content</option>
           </select>
         </label>
         <NewPasswordField />

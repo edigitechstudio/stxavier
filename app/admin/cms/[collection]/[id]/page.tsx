@@ -42,7 +42,7 @@ async function Editor({ params, searchParams }: Pick<PageProps<'/admin/cms/[coll
     if (initial === null) notFound();
   }
 
-  const title = isNew ? `New — ${c.label}` : c.kind === 'pages' ? pageInfo(id).label : c.kind === 'site' ? c.label : titleOf(initial, id);
+  const title = isNew ? `New: ${c.label}` : c.kind === 'pages' ? pageInfo(id).label : c.kind === 'site' ? c.label : titleOf(initial, id);
   const path = isNew ? null : c.kind === 'pages' ? pageInfo(id).path : (c.path?.(id) ?? null);
   const back = c.kind === 'site' ? '/admin/cms' : `/admin/cms/${c.key}`;
 
@@ -54,7 +54,7 @@ async function Editor({ params, searchParams }: Pick<PageProps<'/admin/cms/[coll
       actions={<Link href={back} className="link-arrow"><ArrowLeft size={15} aria-hidden /> {c.kind === 'site' ? 'All content' : c.label}</Link>}
     >
       {sp.saved === '1' && <p className="notice-ok" role="status">Created and published.</p>}
-      {isNew && <p className="muted admin-lead">New entries start hidden — tick “Published” when ready.</p>}
+      {isNew && <p className="muted admin-lead">New entries start hidden. Tick “Published” when ready.</p>}
       <EntryEditor
         collectionKey={c.key}
         id={isNew ? null : id}

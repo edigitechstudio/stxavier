@@ -96,7 +96,7 @@ export function LeadForm({ source, options, prefill = {}, header, showMessage = 
       {header}
       {errors.form && <p className="form-error" role="alert">{errors.form}</p>}
 
-      {/* Honeypot — invisible to people, tempting to bots. */}
+      {/* Honeypot, invisible to people, tempting to bots. */}
       <div className="hp-field" aria-hidden>
         <label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
       </div>

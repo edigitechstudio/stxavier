@@ -82,7 +82,7 @@ export const universities: University[] = unis.map(([slug, name, country, city, 
 export const events: SiteEvent[] = [
   {
     slug: 'uk-university-fair-nov-2026', kind: 'university_visit', is_placeholder: true, published: true,
-    title: L('UK University Fair — Kathmandu', 'बेलायत विश्वविद्यालय मेला — काठमाडौं'),
+    title: L('UK University Fair, Kathmandu', 'बेलायत विश्वविद्यालय मेला, काठमाडौं'),
     summary: L('Meet UK university representatives, get on-the-spot profile assessments and learn about January and September intakes.'),
     description: [L('Bring your transcripts and English test results for an on-the-spot profile assessment.'), L('Entry is free, but registration is required as seats are limited.')],
     starts_at: '2026-11-14T11:00:00+05:45', ends_at: '2026-11-14T16:00:00+05:45',
@@ -92,7 +92,7 @@ export const events: SiteEvent[] = [
   {
     slug: 'australia-webinar-nov-2026', kind: 'webinar', is_placeholder: true, published: true,
     title: L('Webinar: Studying in Australia in 2027', 'वेबिनार: २०२७ मा अष्ट्रेलियामा अध्ययन'),
-    summary: L('Genuine Student requirements, costs, part-time work and post-study visas — live Q&A with our Australia counsellor.'),
+    summary: L('Genuine Student requirements, costs, part-time work and post-study visas. Live Q&A with our Australia counsellor.'),
     description: [L('A 45-minute session followed by live questions.'), L('The joining link is sent after registration.')],
     starts_at: '2026-11-28T18:00:00+05:45', ends_at: '2026-11-28T19:00:00+05:45',
     venue: null, online_url: 'https://zoom.us/', recording_url: null,

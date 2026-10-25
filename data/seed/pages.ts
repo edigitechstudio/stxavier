@@ -10,28 +10,28 @@ const unsplash = (id: string, w = 1800) => `https://images.unsplash.com/photo-${
 // TODO: replace with the real team (names, photos with consent, experience). Sample profiles never render in production.
 export const counsellors: Counsellor[] = [
   {
-    slug: 'sample-counsellor-uk', name: 'Sample Counsellor A', role: L('Senior Counsellor — UK & Europe', 'वरिष्ठ परामर्शदाता — बेलायत र युरोप'),
+    slug: 'sample-counsellor-uk', name: 'Sample Counsellor A', role: L('Senior Counsellor: UK & Europe', 'वरिष्ठ परामर्शदाता, बेलायत र युरोप'),
     photo: unsplash('1573496359142-b8d87734a5a2', 600), specializations: [L('UK admissions'), L('Cyprus'), L('Scholarships')],
     languages: ['English', 'Nepali', 'Hindi'], years_experience: 8, destinations: ['uk', 'cyprus'],
     bio: L('Helps students choose the right UK universities, write strong personal statements and prepare for CAS and visa interviews.'),
     featured: true, is_placeholder: true, sort: 0, published: true,
   },
   {
-    slug: 'sample-counsellor-australia', name: 'Sample Counsellor B', role: L('Counsellor — Australia & New Zealand', 'परामर्शदाता — अष्ट्रेलिया र न्युजिल्याण्ड'),
+    slug: 'sample-counsellor-australia', name: 'Sample Counsellor B', role: L('Counsellor: Australia & New Zealand', 'परामर्शदाता, अष्ट्रेलिया र न्युजिल्याण्ड'),
     photo: unsplash('1560250097-0b93528c311a', 600), specializations: [L('Australian visas'), L('Genuine Student statements'), L('Nursing pathways')],
     languages: ['English', 'Nepali'], years_experience: 6, destinations: ['australia', 'new-zealand'],
     bio: L('Specialises in Australian and New Zealand applications, from course selection to visa lodgement and pre-departure.'),
     featured: true, is_placeholder: true, sort: 1, published: true,
   },
   {
-    slug: 'sample-counsellor-north-america', name: 'Sample Counsellor C', role: L('Counsellor — USA & Canada', 'परामर्शदाता — अमेरिका र क्यानडा'),
+    slug: 'sample-counsellor-north-america', name: 'Sample Counsellor C', role: L('Counsellor: USA & Canada', 'परामर्शदाता, अमेरिका र क्यानडा'),
     photo: unsplash('1580489944761-15a19d654956', 600), specializations: [L('F-1 visa interviews'), L('Canadian colleges'), L('Assistantships')],
     languages: ['English', 'Nepali'], years_experience: 5, destinations: ['usa', 'canada'],
     bio: L('Guides students through US and Canadian admissions, I-20 and study-permit documentation, and visa interview practice.'),
     featured: true, is_placeholder: true, sort: 2, published: true,
   },
   {
-    slug: 'sample-counsellor-japan', name: 'Sample Counsellor D', role: L('Counsellor — Japan', 'परामर्शदाता — जापान'),
+    slug: 'sample-counsellor-japan', name: 'Sample Counsellor D', role: L('Counsellor: Japan', 'परामर्शदाता, जापान'),
     photo: unsplash('1519085360753-af0119f7cbe7', 600), specializations: [L('Japanese language schools'), L('COE documentation')],
     languages: ['Japanese', 'English', 'Nepali'], years_experience: 7, destinations: ['japan'],
     bio: L('Supports Japan-bound students with school selection, COE documents and Japanese interview preparation.'),
@@ -58,7 +58,7 @@ export const pages: Omit<PageContentMap, 'home'> = {
       eyebrow: L('About Us', 'हाम्रोबारे'),
       title: L('Guiding Nepali students since 2012', 'सन् २०१२ देखि नेपाली विद्यार्थीको मार्गदर्शन'),
       highlight: L('since 2012', 'सन् २०१२ देखि'),
-      subtitle: L('One place, many destinations — honest advice and end-to-end support.', 'ठाउँ एक, गन्तव्य अनेक — इमानदार सल्लाह र सम्पूर्ण सहयोग।'),
+      subtitle: L('One place, many destinations. Honest advice and end-to-end support.', 'ठाउँ एक, गन्तव्य अनेक, इमानदार सल्लाह र सम्पूर्ण सहयोग।'),
       image: unsplash('1524178232363-1fb2b075b655'),
     },
     story: {
@@ -93,7 +93,7 @@ export const pages: Omit<PageContentMap, 'home'> = {
       image: unsplash('1511632765486-a01980e01a18'),
     },
     intro: L(
-      'Sending a son or daughter abroad is a big decision. We involve parents at every step — from choosing a safe, reputable institution to planning finances and staying in touch after arrival.',
+      'Sending a son or daughter abroad is a big decision. We involve parents at every step, from choosing a safe, reputable institution to planning finances and staying in touch after arrival.',
       'छोरा वा छोरीलाई विदेश पठाउनु ठूलो निर्णय हो। सुरक्षित र प्रतिष्ठित संस्था छनोटदेखि आर्थिक योजना र पुगेपछि सम्पर्कमा रहनेसम्म हामी अभिभावकलाई हरेक चरणमा समावेश गर्छौं।',
     ),
     sections: [
@@ -104,7 +104,7 @@ export const pages: Omit<PageContentMap, 'home'> = {
     ],
     cost_example: {
       title: L('Example: first-year budget checklist', 'उदाहरण: पहिलो वर्षको बजेट सूची'),
-      note: L('Amounts vary by country and course — we prepare an exact estimate for your child.', 'रकम देश र कोर्सअनुसार फरक हुन्छ — तपाईंको सन्तानका लागि सही अनुमान तयार गर्छौं।'),
+      note: L('Amounts vary by country and course. We prepare an exact estimate for your child.', 'रकम देश र कोर्सअनुसार फरक हुन्छ, तपाईंको सन्तानका लागि सही अनुमान तयार गर्छौं।'),
       rows: [
         { item: L('Tuition (first year)', 'शुल्क (पहिलो वर्ष)'), amount: L('Depends on institution', 'संस्थाअनुसार') },
         { item: L('Living costs', 'बस्ने खर्च'), amount: L('Set by visa rules', 'भिसा नियमअनुसार') },
@@ -194,7 +194,7 @@ export const extraFaqs: Faq[] = [
   {
     id: 'prep-which-test', scope: 'test-prep', sort: 0, published: true,
     question: L('Should I take IELTS or PTE?', 'IELTS दिने कि PTE?'),
-    answer: L('Both are widely accepted. IELTS has a face-to-face speaking test and paper or computer options; PTE is fully computer-based with faster results. Choose the test your university and visa accept, and the format you are most comfortable with — our free mock tests help you decide.'),
+    answer: L('Both are widely accepted. IELTS has a face-to-face speaking test and paper or computer options; PTE is fully computer-based with faster results. Choose the test your university and visa accept, and the format you are most comfortable with. Our free mock tests help you decide.'),
   },
   {
     id: 'prep-mock', scope: 'test-prep', sort: 1, published: true,

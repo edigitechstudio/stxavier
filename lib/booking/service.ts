@@ -35,7 +35,7 @@ export async function slotInput(counsellor: string, mode: BookingMode, nowIso = 
   };
 }
 
-/** Bookable days only — days with no free slot are dropped. */
+/** Bookable days only. Days with no free slot are dropped. */
 export async function availableDays(counsellor: string, mode: BookingMode) {
   const { input } = await slotInput(counsellor, mode);
   return generateSlots(input).filter((d) => d.slots.length > 0);

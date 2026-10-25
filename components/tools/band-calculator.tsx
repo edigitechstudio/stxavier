@@ -110,7 +110,7 @@ export function BandCalculator({ requirements, countryNames }: { requirements: B
         <div>
           <div className="result-hero" aria-live="polite">
             <small>{test === 'ielts' ? t('overall') : t('estimate')}</small>
-            <strong>{result == null ? '—' : test === 'ielts' ? fmt.num(result, 1) : fmt.num(result)}</strong>
+            <strong>{result == null ? '-' : test === 'ielts' ? fmt.num(result, 1) : fmt.num(result)}</strong>
             <p>{result == null ? t('invalid') : test === 'pte' ? t('estimateNote') : `${t('listening')} · ${t('reading')} · ${t('writing')} · ${t('speaking')}`}</p>
           </div>
           <ToolActions />
@@ -134,7 +134,7 @@ export function BandCalculator({ requirements, countryNames }: { requirements: B
               const need =
                 test === 'ielts'
                   ? [r.ielts_overall != null ? fmt.num(r.ielts_overall, 1) : null, r.ielts_min_band != null ? t('minEach', { n: fmt.num(r.ielts_min_band, 1) }) : null].filter(Boolean).join(' · ')
-                  : r.pte_overall != null ? fmt.num(r.pte_overall) : '—';
+                  : r.pte_overall != null ? fmt.num(r.pte_overall) : '-';
               return (
                 <tr key={r.id}>
                   <th scope="row">{countryNames[r.country] ?? r.country}</th>
@@ -143,9 +143,9 @@ export function BandCalculator({ requirements, countryNames }: { requirements: B
                     <span className="block text-xs muted">{r.kind === 'visa' ? t('visa') : t('university')}{r.note ? ` · ${r.note}` : ''}</span>
                     {r.source_url && <a href={r.source_url} target="_blank" rel="noopener" className="text-xs">{t('source')} ↗</a>}
                   </td>
-                  <td>{need || '—'}</td>
+                  <td>{need || '-'}</td>
                   <td>
-                    {ok === null ? '—' : ok ? (
+                    {ok === null ? '-' : ok ? (
                       <span className="status is-good"><CheckCircle2 size={14} aria-hidden /> {t('meets')}</span>
                     ) : (
                       <span className="status is-gap"><XCircle size={14} aria-hidden /> {t('below')}</span>

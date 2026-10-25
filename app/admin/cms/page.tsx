@@ -39,7 +39,7 @@ async function Home() {
       }
     >
       <p className="muted admin-lead">
-        Everything on the website is edited here — text in English and Nepali, images, lists, prices, dates and menus. Saving publishes the change immediately.
+        Everything on the website is edited here: text in English and Nepali, images, lists, prices, dates and menus. Saving publishes the change immediately.
         {!isSupabaseConfigured && ' Local demo mode: edits apply to this running site until the server restarts.'}
       </p>
 

@@ -1,7 +1,7 @@
 import { CalendarCheck } from 'lucide-react';
 import { getFormatter, getTranslations } from 'next-intl/server';
 
-/** "Last updated" stamp — a freshness signal for answer engines. Renders a machine-readable <time>. */
+/** "Last updated" stamp, a freshness signal for answer engines. Renders a machine-readable <time>. */
 export async function LastUpdated({ date }: { date: string }) {
   const [format, t] = await Promise.all([getFormatter(), getTranslations('common')]);
   return (

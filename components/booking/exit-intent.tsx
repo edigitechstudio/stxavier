@@ -29,7 +29,7 @@ const markSeen = () => {
   try {
     sessionStorage.setItem(SEEN_KEY, '1');
   } catch {
-    /* storage blocked — the pop-up may show again, which is acceptable */
+    /* storage blocked, the pop-up may show again, which is acceptable */
   }
 };
 

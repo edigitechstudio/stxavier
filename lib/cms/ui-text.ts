@@ -6,7 +6,7 @@ import { createSessionClient } from '@/lib/supabase/server';
 
 export type Locale2 = 'en' | 'ne';
 
-/** Variables like {name} or {n, plural, …} in a message — an edit must keep the same ones. */
+/** Variables like {name} or {n, plural, …} in a message. An edit must keep the same ones. */
 export const placeholders = (s: string) => [...new Set([...s.matchAll(/\{\s*([A-Za-z_]\w*)/g)].map((m) => m[1]))].sort();
 
 /** Flattens messages JSON to "namespace.key" → text. */

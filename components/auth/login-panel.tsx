@@ -33,7 +33,7 @@ export type LoginLabels = {
 
 /**
  * Passwordless sign-in: email magic link (+ 6-digit code from the same email) or Google.
- * `allowSignup` is false for /admin — staff accounts are created by invitation only.
+ * `allowSignup` is false for /admin. Staff accounts are created by invitation only.
  * In local demo mode (no Supabase) it offers one-click demo accounts instead.
  */
 export function LoginPanel({ next, labels, demo, configured, allowSignup, demoRoles, google: googleEnabled = false }: { next: string; labels: LoginLabels; demo: boolean; configured: boolean; allowSignup: boolean; google?: boolean; demoRoles: ('student' | 'counsellor' | 'admin')[] }) {

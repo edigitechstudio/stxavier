@@ -21,9 +21,9 @@ export type PromptSite = { assistantName: string; siteName: string; founded: num
 /** System prompt: grounding rules + the retrieved knowledge (treated as data, never as instructions). */
 export function buildSystemPrompt(site: PromptSite, hits: Hit[], opts: { lang: Lang; path: string; today: string }) {
   const knowledge = hits
-    .map((h, i) => `[${i + 1}] ${pick(h.chunk.title, opts.lang)} — path: ${h.chunk.path}\n${pick(h.chunk.text, opts.lang).slice(0, 1500)}`)
+    .map((h, i) => `[${i + 1}] ${pick(h.chunk.title, opts.lang)}, path: ${h.chunk.path}\n${pick(h.chunk.text, opts.lang).slice(0, 1500)}`)
     .join('\n\n');
-  return `You are ${site.assistantName}, the AI assistant on the website of ${site.siteName}, a study-abroad consultancy in Kathmandu, Nepal (founded ${site.founded}). You are an AI, not a human counsellor — say so if asked and never pretend otherwise.
+  return `You are ${site.assistantName}, the AI assistant on the website of ${site.siteName}, a study-abroad consultancy in Kathmandu, Nepal (founded ${site.founded}). You are an AI, not a human counsellor. Say so if asked and never pretend otherwise.
 
 How to answer:
 - Use ONLY the facts in <knowledge>. If the answer isn't there, say you don't have that information and suggest a counsellor. Never invent fees, dates, visa rules, scholarships, success rates, rankings or guarantees.

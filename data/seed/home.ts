@@ -12,8 +12,8 @@ export const homeContent: HomeContent = {
     title: { en: 'One place. Many destinations.', ne: 'ठाउँ एक, गन्तव्य अनेक' },
     highlight: { en: 'Many destinations.', ne: 'गन्तव्य अनेक' },
     subtitle: {
-      en: 'Admissions, test prep and visas — expert guidance since 2012.',
-      ne: 'भर्ना, परीक्षा तयारी र भिसा — सन् २०१२ देखि विज्ञ मार्गदर्शन।',
+      en: 'Admissions, test prep and visas. Expert guidance since 2012.',
+      ne: 'भर्ना, परीक्षा तयारी र भिसा, सन् २०१२ देखि विज्ञ मार्गदर्शन।',
     },
     image: unsplash('1523240795612-9a054b0db644', 2000),
     primary_cta: { en: 'Get Started', ne: 'सुरु गर्नुहोस्' },
@@ -114,7 +114,7 @@ export const homeContent: HomeContent = {
   tools: {
     eyebrow: { en: 'Free Tools', ne: 'निःशुल्क उपकरण' },
     title: { en: 'Plan your study abroad journey in minutes', ne: 'केही मिनेटमै विदेश अध्ययनको योजना बनाउनुहोस्' },
-    subtitle: { en: 'Check eligibility, estimate costs and find scholarships — free.', ne: 'योग्यता जाँच, खर्च अनुमान र छात्रवृत्ति खोजी — निःशुल्क।' },
+    subtitle: { en: 'Check eligibility, estimate costs and find scholarships. Free.', ne: 'योग्यता जाँच, खर्च अनुमान र छात्रवृत्ति खोजी, निःशुल्क।' },
   },
   team: {
     eyebrow: { en: 'Our Counsellors', ne: 'हाम्रा परामर्शदाता' },
@@ -183,7 +183,7 @@ export const features: Feature[] = [
 const portrait = (id: string) => unsplash(id, 600);
 const baseTestimonials: Testimonial[] = [
   { id: 'story-1', kind: 'story', name: 'Sample Student A', meta: { en: 'University of Melbourne' }, country: 'Australia', image: portrait('1507003211169-0a1dd7228f2d'), quote: { en: 'My counsellor helped me turn a gap year into a strength in my SOP. I received my offer and visa within eight weeks.' }, rating: null, video_url: null, is_placeholder: true, sort: 0, published: true },
-  { id: 'story-2', kind: 'story', name: 'Sample Student B', meta: { en: 'University of Toronto' }, country: 'Canada', image: portrait('1494790108377-be9c29b29330'), quote: { en: 'The mock interviews were tougher than the real one — which is exactly why I walked out of my visa interview smiling.' }, rating: null, video_url: null, is_placeholder: true, sort: 1, published: true },
+  { id: 'story-2', kind: 'story', name: 'Sample Student B', meta: { en: 'University of Toronto' }, country: 'Canada', image: portrait('1494790108377-be9c29b29330'), quote: { en: 'The mock interviews were tougher than the real one. Which is exactly why I walked out of my visa interview smiling.' }, rating: null, video_url: null, is_placeholder: true, sort: 1, published: true },
   { id: 'story-3', kind: 'story', name: 'Sample Student C', meta: { en: 'University of Leeds' }, country: 'United Kingdom', image: portrait('1534528741775-53994a69daeb'), quote: { en: 'From IELTS 6.0 to 7.5 in two months. The trainers genuinely care about every student.' }, rating: null, video_url: null, is_placeholder: true, sort: 2, published: true },
   { id: 'story-4', kind: 'story', name: 'Sample Student D', meta: { en: 'Arizona State University' }, country: 'USA', image: portrait('1506794778202-cad84cf45f1d'), quote: { en: 'They found me a scholarship I did not even know existed. That changed what was financially possible for my family.' }, rating: null, video_url: null, is_placeholder: true, sort: 3, published: true },
   { id: 'story-5', kind: 'story', name: 'Sample Student E', meta: { en: 'Japanese Language School, Tokyo' }, country: 'Japan', image: portrait('1544005313-94ddf0286df2'), quote: { en: 'The Japanese language classes prepared me for life in Tokyo, not just the exam.' }, rating: null, video_url: null, is_placeholder: true, sort: 4, published: true },

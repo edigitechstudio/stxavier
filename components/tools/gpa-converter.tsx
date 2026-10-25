@@ -70,14 +70,14 @@ export function GpaConverter({ scales }: { scales: ScaleOption[] }) {
         <div>
           <div className="result-hero" aria-live="polite">
             <small>{t('result')}</small>
-            <strong>{result?.main ?? '—'}</strong>
+            <strong>{result?.main ?? '-'}</strong>
             <p>{result ? (result.band ? `${t('grade')}: ${result.band.grade}${result.band.remark ? ` · ${result.band.remark}` : ''}` : '') : t('invalid')}</p>
           </div>
           <ToolActions pdf={false} share={false} />
         </div>
       </div>
 
-      <h3 className="mt-8 mb-3 text-lg font-extrabold">{t('bands')} — {scale.name}</h3>
+      <h3 className="mt-8 mb-3 text-lg font-extrabold">{t('bands')}: {scale.name}</h3>
       <div className="table-wrap">
         <table className="data-table">
           <thead>

@@ -98,19 +98,19 @@ function seed(): DemoStore {
     history: [
       { id: 'h1', application_id: appId, from_stage: null, to_stage: 'documents', changed_by_name: 'Demo Counsellor', note: 'File opened after counselling session.', created_at: ago(38) },
       { id: 'h2', application_id: appId, from_stage: 'documents', to_stage: 'applied', changed_by_name: 'Demo Counsellor', note: 'Application submitted to the university.', created_at: ago(21) },
-      { id: 'h3', application_id: appId, from_stage: 'applied', to_stage: 'offer_received', changed_by_name: 'Demo Counsellor', note: 'Conditional offer received — English test result pending.', created_at: ago(3) },
+      { id: 'h3', application_id: appId, from_stage: 'applied', to_stage: 'offer_received', changed_by_name: 'Demo Counsellor', note: 'Conditional offer received. English test result pending.', created_at: ago(3) },
       { id: 'h4', application_id: 'demo-app-au', from_stage: 'visa_lodged', to_stage: 'visa_granted', changed_by_name: 'Demo Counsellor', note: null, created_at: ago(6) },
     ],
     documents: [
       doc('d1', 'passport', 'passport-bio-page.pdf', 'verified', null, 30),
       doc('d2', 'academic', 'bachelor-transcript.pdf', 'verified', null, 29),
-      doc('d3', 'english', 'ielts-result.pdf', 'reupload_needed', 'The scan is cut off at the bottom — please upload the full Test Report Form.', 5),
+      doc('d3', 'english', 'ielts-result.pdf', 'reupload_needed', 'The scan is cut off at the bottom. Please upload the full Test Report Form.', 5),
       doc('d4', 'sop', 'statement-of-purpose-draft.pdf', 'pending', null, 1),
     ],
     files,
     notifications: [
       { id: 'n1', user_id: studentId, kind: 'deadline', title: 'Accept your offer by the deadline', body: 'Confirm your University of Leeds offer and pay the deposit.', link: null, due_at: ahead(12), read_at: null, created_at: ago(3) },
-      { id: 'n2', user_id: studentId, kind: 'document', title: 'Re-upload needed: English test result', body: 'The scan is cut off at the bottom — please upload the full Test Report Form.', link: '/portal/documents', due_at: null, read_at: null, created_at: ago(5) },
+      { id: 'n2', user_id: studentId, kind: 'document', title: 'Re-upload needed: English test result', body: 'The scan is cut off at the bottom. Please upload the full Test Report Form.', link: '/portal/documents', due_at: null, read_at: null, created_at: ago(5) },
       { id: 'n3', user_id: studentId, kind: 'stage', title: 'Your application moved to “Offer received”', body: null, link: '/portal', due_at: null, read_at: ago(2), created_at: ago(3) },
     ],
     leads: [
@@ -122,7 +122,7 @@ function seed(): DemoStore {
       lead('demo-lead-6', 15, { source: 'contact', name: 'Sujan Basnet', phone: '015333081', status: 'lost', payload: { message: 'Interested in PTE classes only.' }, page_path: '/en/contact' }),
     ],
     leadNotes: [
-      { id: 'ln1', lead_id: 'demo-lead-2', author_name: 'Demo Counsellor', body: 'Called — wants a May intake. Sent the Canada guide.', created_at: ago(1) },
+      { id: 'ln1', lead_id: 'demo-lead-2', author_name: 'Demo Counsellor', body: 'Called: wants a May intake. Sent the Canada guide.', created_at: ago(1) },
     ],
   };
 }

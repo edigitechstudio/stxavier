@@ -28,7 +28,7 @@ import type { SiteEvent, University } from '@/types/trust';
 import type { AvailabilityException, AvailabilityRule } from '@/types/booking';
 
 /**
- * Content repository — the only place pages read business content from.
+ * Content repository, the only place pages read business content from.
  *
  * Source: Supabase when configured, otherwise the typed seed files in `data/seed`.
  * Caching: every reader is `'use cache'` + tagged. Editing a row in Supabase triggers
@@ -334,7 +334,7 @@ export async function getNowIso(): Promise<string> {
 }
 
 // ---------------------------------------------------------------------------
-// Booking (Phase 5) — availability is content; bookings themselves are never cached.
+// Booking (Phase 5): availability is content; bookings themselves are never cached.
 // ---------------------------------------------------------------------------
 
 export async function getAvailability(): Promise<{ rules: AvailabilityRule[]; exceptions: AvailabilityException[] }> {

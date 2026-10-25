@@ -28,7 +28,7 @@ async function Applications({ searchParams }: { searchParams: PageProps<'/admin/
   const q = typeof sp.q === 'string' ? sp.q.slice(0, 80) : undefined;
   const [apps, destinations, team] = await Promise.all([listApplications({ stage, q }), getDestinations(), getCounsellors()]);
   const country = (slug: string) => l(destinations.find((d) => d.slug === slug)?.name, 'en') ?? slug;
-  const name = (slug: string | null) => (slug ? (team.find((c) => c.slug === slug)?.name ?? slug) : '—');
+  const name = (slug: string | null) => (slug ? (team.find((c) => c.slug === slug)?.name ?? slug) : '-');
 
   return (
     <AdminShell section="applications" viewer={viewer} title="Applications">
@@ -87,7 +87,7 @@ async function Applications({ searchParams }: { searchParams: PageProps<'/admin/
             {apps.map((a) => (
               <tr key={a.id}>
                 <td><Link href={`/admin/applications/${a.id}`}>{a.student_name ?? a.student_email}</Link><small>{a.student_email}</small></td>
-                <td>{a.university ?? '—'}<small>{[a.course, country(a.country), a.intake].filter(Boolean).join(' · ')}</small></td>
+                <td>{a.university ?? '-'}<small>{[a.course, country(a.country), a.intake].filter(Boolean).join(' · ')}</small></td>
                 <td>
                   <span className="stage-mini" role="img" aria-label={`Stage ${stageIndex(a.stage) + 1} of ${APP_STAGES.length}`}>
                     {APP_STAGES.map((s, i) => <i key={s} className={i <= stageIndex(a.stage) ? 'is-on' : ''} />)}

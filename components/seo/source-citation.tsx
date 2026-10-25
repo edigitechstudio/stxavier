@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { Source } from '@/types/content';
 
-/** "Official sources" list with access dates — citation-worthy references for readers and AI engines. */
+/** "Official sources" list with access dates. Citation-worthy references for readers and AI engines. */
 export async function SourceList({ sources }: { sources: Source[] }) {
   if (!sources.length) return null;
   const [t, tp] = await Promise.all([getTranslations('common'), getTranslations('pages')]);

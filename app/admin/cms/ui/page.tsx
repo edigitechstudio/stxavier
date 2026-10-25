@@ -48,7 +48,7 @@ async function UiText({ searchParams }: { searchParams: PageProps<'/admin/cms/ui
 
   return (
     <AdminShell section="content" viewer={viewer} title="Interface text" actions={<Link href="/admin/cms" className="link-arrow"><ArrowLeft size={15} aria-hidden /> All content</Link>}>
-      <p className="muted admin-lead">Every fixed piece of text on the site — headings, labels, buttons, messages, SEO titles. Change the wording in either language; clear a field (or press ↺) to go back to the default.</p>
+      <p className="muted admin-lead">Every fixed piece of text on the site: headings, labels, buttons, messages, SEO titles. Change the wording in either language; clear a field (or press ↺) to go back to the default.</p>
       <form className="admin-filters" method="get" role="search">
         <label className="grow">Search all text<input type="search" name="q" defaultValue={q} placeholder="e.g. Book a free session" /></label>
         <button type="submit" className="btn btn-outline btn-sm">Search</button>

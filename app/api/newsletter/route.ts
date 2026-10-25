@@ -30,7 +30,7 @@ export async function POST(req: Request) {
   }
 
   if (!isSupabaseConfigured || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    console.warn('[newsletter] Supabase not configured — subscription not stored');
+    console.warn('[newsletter] Supabase not configured. Subscription not stored');
     return Response.json({ error: 'Not configured' }, { status: 503 });
   }
 

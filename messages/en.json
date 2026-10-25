@@ -9,7 +9,7 @@
     "learnMore": "Learn more",
     "viewAll": "View all",
     "placeholder": "Placeholder",
-    "placeholderHint": "Placeholder value — replace with verified data before launch",
+    "placeholderHint": "Placeholder value: replace with verified data before launch",
     "faq": "Frequently asked questions"
   },
   "header": {
@@ -70,7 +70,7 @@
     "subtitle": "One useful email a month. Unsubscribe any time.",
     "email": "Email address",
     "submit": "Subscribe",
-    "success": "You're subscribed — thank you!",
+    "success": "You're subscribed, thank you!",
     "error": "Something went wrong. Please try again.",
     "invalid": "Please enter a valid email address."
   },
@@ -123,8 +123,8 @@
     "days": "Days",
     "hours": "Hours",
     "minutes": "Mins",
-    "closesOn": "{label} — deadline {date}",
-    "closed": "This intake deadline has passed — ask us about the next one."
+    "closesOn": "{label}, deadline {date}",
+    "closed": "This intake deadline has passed. Ask us about the next one."
   },
   "counselling": {
     "eyebrow": "Free Counselling",
@@ -145,7 +145,7 @@
     "successBody": "We’ve received your request. A St. Xavier counsellor will call you within one working day.",
     "done": "Done",
     "error": "Sorry, we couldn’t send that. Please try again or call us.",
-    "rateLimited": "Too many attempts — please wait a few minutes or call us.",
+    "rateLimited": "Too many attempts. Please wait a few minutes or call us.",
     "invalidName": "Please enter your name.",
     "invalidPhone": "Please enter a valid Nepali phone number.",
     "invalidEmail": "Please enter a valid email or leave it blank.",
@@ -155,7 +155,7 @@
     "messagePlaceholder": "Tell us your questions or plans…",
     "send": "Send Message",
     "counsellor": "Counsellor",
-    "verifying": "Just a moment — verifying you’re human. Please try again in a second."
+    "verifying": "Just a moment, we’re checking you’re human. Please try again in a second."
   },
   "pages": {
     "onThisPage": "On this page",
@@ -232,7 +232,7 @@
     "values": "What we stand for",
     "milestones": "Milestones",
     "accreditations": "Accreditations & memberships",
-    "draft": "Draft — this text is pending legal review.",
+    "draft": "Draft: this text is pending legal review.",
     "allServices": "All services",
     "allCourses": "All test prep classes",
     "tools": "Free study abroad tools"
@@ -248,7 +248,7 @@
     "contact": "Contact Our Kathmandu Office",
     "contactDesc": "Call, WhatsApp, email or visit St. Xavier Educational Network in Kathmandu for free study abroad counselling.",
     "parents": "Study Abroad Guide for Parents",
-    "parentsDesc": "Safety, total costs, education loans and support after arrival — what Nepali parents should know before a child studies abroad.",
+    "parentsDesc": "Safety, total costs, education loans and support after arrival. What Nepali parents should know before a child studies abroad.",
     "testPrep": "IELTS, PTE & Japanese Classes in Kathmandu",
     "testPrepDesc": "IELTS, PTE, TOEFL and Japanese language classes in Kathmandu with small batches, flexible timings and free mock tests.",
     "course": "{course} Classes in Kathmandu",
@@ -348,7 +348,7 @@
       },
       "score": "Overall score",
       "unlockTitle": "Unlock your full results",
-      "unlockBody": "Enter your details to see your matches. A counsellor will follow up for free — no obligation.",
+      "unlockBody": "Enter your details to see your matches. A counsellor will follow up for free. No obligation.",
       "unlock": "Show my results",
       "resultsTitle": "Your best-fit destinations",
       "match": "match",
@@ -366,7 +366,7 @@
         "ok": "Close",
         "gap": "Gap"
       },
-      "disclaimer": "Guidance only — universities set their own entry requirements.",
+      "disclaimer": "Guidance only: universities set their own entry requirements.",
       "viewGuide": "View country guide"
     },
     "cost": {
@@ -385,14 +385,14 @@
         "nrb+cross": "Nepal Rastra Bank (NZD via USD cross rate)",
         "fallback": "Fallback rate (live rates unavailable)"
       },
-      "notOffered": "This level isn’t available for this country in our data — try another level.",
+      "notOffered": "This level isn’t available for this country in our data. Try another level.",
       "example": "e.g. {city}"
     },
     "scholarship": {
       "percent": "Your percentage",
       "field": "Field",
       "results": "{n} scholarships match your filters",
-      "none": "No scholarships match — try widening your filters.",
+      "none": "No scholarships match. Try widening your filters.",
       "full": "Fully funded",
       "partial": "Partial",
       "deadline": "Deadline",
@@ -410,7 +410,7 @@
       "speaking": "Speaking",
       "overall": "Overall band",
       "estimate": "Estimated overall",
-      "estimateNote": "Estimate only — Pearson calculates the real overall from every item.",
+      "estimateNote": "Estimate only: Pearson calculates the real overall from every item.",
       "requirements": "What this score meets",
       "meets": "Meets",
       "below": "Below",
@@ -434,11 +434,11 @@
     },
     "timeline": {
       "intake": "Intake (course start)",
-      "past": "Past — act now",
+      "past": "Deadline passed, act now",
       "ics": "Download calendar (.ics)",
       "google": "Add to Google Calendar",
       "startsOn": "Course starts {date}",
-      "calendarName": "Study abroad plan — {country}",
+      "calendarName": "Study abroad plan: {country}",
       "eventPrefix": "{country}: {step}",
       "summary": "Your plan for {country}, {intake}"
     },
@@ -555,10 +555,10 @@
       "editorialBio": "Written and reviewed by St. Xavier counsellors using official government and university sources. See our editorial policy.",
       "none": "No articles yet.",
       "read": "Read article",
-      "needsReview": "Draft — pending fact-check by the team.",
+      "needsReview": "Draft: pending fact-check by the team.",
       "country": "Country",
       "count": "{n} articles",
-      "englishShown": "English version shown — Nepali translation coming soon."
+      "englishShown": "English version shown. Nepali translation coming soon."
     },
     "events": {
       "upcoming": "Upcoming events",
@@ -572,7 +572,7 @@
       "registerIntro": "We’ll send you a reminder and the details.",
       "watch": "Watch recording",
       "ended": "This event has ended.",
-      "none": "No upcoming events right now — check back soon.",
+      "none": "No upcoming events right now. Check back soon.",
       "kinds": {
         "event": "Event",
         "webinar": "Webinar",
@@ -623,7 +623,7 @@
     "next": "Next",
     "back": "Back",
     "any": "Any available counsellor",
-    "anyDesc": "Fastest option — we assign the first free counsellor.",
+    "anyDesc": "Fastest option: we assign the first free counsellor.",
     "modes": {
       "office": "Office visit",
       "zoom": "Zoom video call",
@@ -631,12 +631,12 @@
     },
     "modeDesc": {
       "office": "Meet in person at our Kathmandu office.",
-      "zoom": "Video call from anywhere — link sent by email.",
+      "zoom": "Video call from anywhere. Link sent by email.",
       "whatsapp": "Your counsellor calls you on WhatsApp."
     },
     "loading": "Loading available times…",
     "noSlots": "No free times on this day.",
-    "noDays": "No availability in the next two weeks — please call us.",
+    "noDays": "No availability in the next two weeks. Please call us.",
     "slotsFor": "Available times on {date}",
     "timezone": "All times are Nepal Time (NPT).",
     "notes": "Anything we should know? (optional)",
@@ -655,9 +655,9 @@
     "calendar": "Add to Google Calendar",
     "ics": "Download .ics",
     "another": "Book another session",
-    "conflict": "Sorry — that time was just taken. Please choose another slot.",
+    "conflict": "Sorry, that time was just taken. Please choose another slot.",
     "error": "We couldn’t complete the booking. Please try again or call us.",
-    "unavailable": "Online booking isn’t available right now — please call or WhatsApp us.",
+    "unavailable": "Online booking isn’t available right now. Please call or WhatsApp us.",
     "with": "with {name}",
     "reference": "Reference",
     "email": {
@@ -692,7 +692,7 @@
     "bookNow": "Or book a time now"
   },
   "exit": {
-    "title": "Before you go — take a free guide",
+    "title": "Before you go, take a free guide",
     "body": "Costs, visa steps, documents and scholarships for studying in {country}, in one guide.",
     "country": "Guide for",
     "submit": "Send me the guide",
@@ -739,7 +739,7 @@
       "invalidEmail": "Please enter a valid email address.",
       "invalidCode": "That code is not valid or has expired.",
       "error": "Something went wrong. Please try again.",
-      "verifying": "Just a moment — verifying you’re human.",
+      "verifying": "Just a moment, verifying you’re human.",
       "demoTitle": "Local demo mode",
       "demoBody": "Supabase isn’t connected, so sign in with a sample account. This is only available in development.",
       "demoStudent": "Continue as demo student",
@@ -789,10 +789,10 @@
     "stageDesc": {
       "documents": "Collecting and checking your documents.",
       "applied": "Your application has been submitted to the university.",
-      "offer_received": "You have an offer — follow the conditions and deadlines.",
+      "offer_received": "You have an offer. Follow the conditions and deadlines.",
       "cas_coe": "Your CAS / CoE is being issued.",
       "visa_lodged": "Your visa application has been lodged.",
-      "visa_granted": "Congratulations — your visa is granted!",
+      "visa_granted": "Congratulations, your visa is granted!",
       "pre_departure": "Getting ready to fly."
     },
     "docs": {
@@ -820,7 +820,7 @@
       "all": "All uploads",
       "noDocs": "No documents uploaded yet.",
       "application": "Application",
-      "success": "Uploaded — your counsellor will review it soon.",
+      "success": "Uploaded. Your counsellor will review it soon.",
       "errors": {
         "empty": "The file is empty.",
         "too_large": "The file is larger than {mb} MB.",
@@ -830,7 +830,7 @@
         "generic": "Upload failed. Please try again.",
         "not_found": "Application not found.",
         "choose": "Please choose a file.",
-        "rate_limited": "Too many uploads — please wait a few minutes."
+        "rate_limited": "Too many uploads. Please wait a few minutes."
       }
     },
     "notif": {
@@ -872,22 +872,22 @@
     "send": "Send",
     "stop": "Stop",
     "thinking": "Thinking…",
-    "basicMode": "Basic mode — answers are taken directly from our website.",
+    "basicMode": "Basic mode: answers are taken directly from our website.",
     "sources": "From our website",
     "handoff": "Prefer a person?",
     "whatsapp": "WhatsApp",
     "book": "Book a free session",
     "callback": "Request a call back",
-    "callbackTitle": "Leave your number — a counsellor will call you.",
+    "callbackTitle": "Leave your number and a counsellor will call you.",
     "newChat": "New chat",
     "suggestions": "Try asking",
     "you": "You",
     "verifying": "Checking you’re human…",
-    "noMatch": "I don’t have that information on our website yet. A counsellor can answer it properly — [book a free session](/book), or call {phone}.",
+    "noMatch": "I don’t have that information on our website yet. A counsellor can answer it properly: [book a free session](/book) or call {phone}.",
     "readMore": "Read more",
     "related": "Related:",
     "errors": {
-      "rate_limited": "You’re sending messages quickly — please wait a minute and try again.",
+      "rate_limited": "You’re sending messages quickly. Please wait a minute and try again.",
       "bot_check": "We couldn’t verify you’re human. Please reload the page and try again.",
       "unavailable": "The assistant is unavailable right now. Please WhatsApp or call us.",
       "invalid": "That message couldn’t be sent. Please shorten it and try again.",
