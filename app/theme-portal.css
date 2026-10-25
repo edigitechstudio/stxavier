@@ -26,7 +26,7 @@
 .portal-side { position: sticky; top: calc(var(--header-h) + 20px); display: grid; gap: 18px; padding: 20px; border-radius: var(--radius-xl); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .portal-user { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .portal-user span:last-child { display: grid; min-width: 0; }
-.portal-user strong { color: var(--ink); }
+.portal-user strong { color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .portal-user small { color: var(--muted); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .portal-avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--red-300), var(--red-600)); color: #fff; font-weight: 800; font-size: 18px; }
 .portal-nav { display: grid; gap: 4px; }
@@ -38,7 +38,7 @@
 .portal-signout { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-weight: 600; font-size: 14px; }
 .portal-signout:hover { color: #e11d48; }
 .portal-main { display: grid; gap: 22px; min-width: 0; }
-.portal-head h1 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--ink); }
+.portal-head h1 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: var(--ink); overflow-wrap: anywhere; }
 .portal-head-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .portal-card { padding: 26px; border-radius: var(--radius-xl); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); display: grid; gap: 14px; min-width: 0; }
 .portal-card-title { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; color: var(--ink); }
@@ -152,7 +152,7 @@ a.doc-chip.is-missing:hover { border-color: var(--blue-600); color: var(--link);
 .admin-nav a:hover { background: rgb(255 255 255 / 0.08); color: #fff; }
 .admin-nav a.is-active { background: var(--blue-600); color: #fff; }
 .admin-me { margin-top: auto; display: grid; gap: 4px; padding: 14px; border-radius: 14px; background: rgb(255 255 255 / 0.06); }
-.admin-me strong { color: #fff; }
+.admin-me strong { color: #fff; overflow-wrap: anywhere; }
 .admin-me small { text-transform: capitalize; color: var(--red-300); font-weight: 700; }
 .admin-me .portal-signout { color: rgb(255 255 255 / 0.7); margin-top: 6px; }
 .admin-site { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; color: rgb(255 255 255 / 0.7); }

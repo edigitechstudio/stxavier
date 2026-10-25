@@ -20,7 +20,7 @@ export async function PortalShell({ active, viewer, unread, locale, children }: 
   return (
     <div className="wrap portal">
       <aside className="portal-side">
-        <div className="portal-user">
+        <div className="portal-user" title={`${viewer.name} · ${viewer.email}`}>
           <span className="portal-avatar" aria-hidden>{viewer.name.slice(0, 1).toUpperCase()}</span>
           <span>
             <strong>{viewer.name}</strong>

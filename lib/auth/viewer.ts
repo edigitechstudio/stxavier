@@ -19,7 +19,7 @@ export const getViewer = cache(async (): Promise<Viewer | null> => {
   if (demoAuth) {
     const id = (await cookies()).get(DEMO_COOKIE)?.value;
     const p = id ? demoStore().profiles.find((x) => x.id === id) : undefined;
-    return p ? { id: p.id, email: p.email ?? '', name: p.full_name ?? p.email ?? 'User', role: p.role } : null;
+    return p ? { id: p.id, email: p.email ?? '', name: p.full_name || nameFromEmail(p.email), role: p.role } : null;
   }
   if (!isSupabaseConfigured) return null;
 
@@ -30,11 +30,23 @@ export const getViewer = cache(async (): Promise<Viewer | null> => {
   if (!user) return null;
   const { data: profile } = await supabase.from('profiles').select('role, full_name, email').eq('id', user.id).maybeSingle();
   const role = (profile?.role ?? 'student') as UserRole;
-  const name = profile?.full_name || (user.user_metadata?.full_name as string | undefined) || user.email || 'User';
+  const meta = user.user_metadata as { full_name?: string; name?: string } | undefined;
+  const name = profile?.full_name || meta?.full_name || meta?.name || nameFromEmail(user.email);
   return { id: user.id, email: user.email ?? profile?.email ?? '', name, role };
 });
 
-export const isStaff = (v: Viewer | null): v is Viewer => !!v && (v.role === 'counsellor' || v.role === 'admin');
+/**
+ * A friendly display name when the profile has none, instead of showing the whole email:
+ * "john.smith42@gmail.com" → "John Smith", "pyakurelprajal@gmail.com" → "Pyakurelprajal".
+ */
+export function nameFromEmail(email: string | null | undefined): string {
+  const local = (email ?? '').split('@')[0];
+  const words = local.split(/[._\-+\d]+/).filter(Boolean);
+  if (!words.length) return local || 'User';
+  return words.map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+}
+
+export const isStaff =(v: Viewer | null): v is Viewer => !!v && (v.role === 'counsellor' || v.role === 'admin');
 
 /** Students (and staff previewing) — redirects to the localized portal login. */
 export async function requireViewer(locale: string, next = `/${locale}/portal`): Promise<Viewer> {
