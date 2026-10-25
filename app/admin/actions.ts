@@ -3,10 +3,13 @@ import { refresh, updateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { z } from 'zod';
+import { demoAuth } from '@/lib/auth/mode';
+import { createStaffAccount, password, passwordMatches, setUserPassword, staffEmail } from '@/lib/auth/staff';
 import { getViewer, isStaff } from '@/lib/auth/viewer';
 import { CONTENT_TAGS, getPageContent, type ContentTable } from '@/lib/content';
 import { env } from '@/lib/env';
 import { l } from '@/lib/i18n/localize';
+import { rateLimit } from '@/lib/ratelimit';
 import {
   addException,
   addLeadNote,
@@ -39,6 +42,8 @@ async function admin() {
   if (v.role !== 'admin') throw new Error('Admins only');
   return v;
 }
+
+const isAdmin = (v: Awaited<ReturnType<typeof getViewer>>) => isStaff(v) && v.role === 'admin';
 
 const str = (f: FormData, k: string) => String(f.get(k) ?? '').trim();
 const opt = (f: FormData, k: string) => str(f, k) || null;
@@ -194,6 +199,64 @@ export async function changeRole(f: FormData) {
   if (target === v.id) throw new Error('You cannot change your own role.');
   await setRole(target, z.enum(['student', 'counsellor', 'admin']).parse(str(f, 'role')));
   refresh();
+}
+
+// ---- Staff accounts (email + password, created here — no sign-in emails) -------------------
+export type StaffFormState = { ok?: string; error?: string } | null;
+const firstIssue = (e: z.ZodError) => e.issues[0]?.message ?? 'Please check the form.';
+
+export async function addStaff(_prev: StaffFormState, f: FormData): Promise<StaffFormState> {
+  if (!isAdmin(await getViewer())) return { error: 'Only admins can add staff.' };
+  if (demoAuth) return { error: 'Not available in demo mode — connect Supabase first.' };
+  const parsed = z
+    .object({ name: z.string().trim().min(2, 'Enter their name.').max(100), email: staffEmail, role: z.enum(['counsellor', 'admin']), password })
+    .safeParse({ name: f.get('name'), email: f.get('email'), role: f.get('role'), password: f.get('password') });
+  if (!parsed.success) return { error: firstIssue(parsed.error) };
+  try {
+    const r = await createStaffAccount(parsed.data);
+    refresh();
+    return {
+      ok: r.existed
+        ? `${parsed.data.email} already had an account. It is now ${parsed.data.role} and signs in with the new password.`
+        : `${parsed.data.name} can now sign in at /admin/login. Share the email and password with them privately.`,
+    };
+  } catch (e) {
+    return { error: e instanceof Error ? e.message : 'Could not create the account.' };
+  }
+}
+
+export async function setStaffPassword(_prev: StaffFormState, f: FormData): Promise<StaffFormState> {
+  if (!isAdmin(await getViewer())) return { error: 'Only admins can set passwords.' };
+  if (demoAuth) return { error: 'Not available in demo mode.' };
+  const parsed = z.object({ id, password }).safeParse({ id: f.get('id'), password: f.get('password') });
+  if (!parsed.success) return { error: firstIssue(parsed.error) };
+  try {
+    await setUserPassword(parsed.data.id, parsed.data.password);
+    return { ok: 'Password updated. Share it with them privately.' };
+  } catch (e) {
+    return { error: e instanceof Error ? e.message : 'Could not update the password.' };
+  }
+}
+
+/** Any staff member: change your own password (the current one is checked first). */
+export async function changeMyPassword(_prev: StaffFormState, f: FormData): Promise<StaffFormState> {
+  const v = await getViewer();
+  if (!isStaff(v)) return { error: 'Please sign in again.' };
+  if (demoAuth) return { error: 'Not available in demo mode.' };
+  const current = String(f.get('current') ?? '');
+  const next = password.safeParse(f.get('password'));
+  if (!current) return { error: 'Enter your current password.' };
+  if (!next.success) return { error: firstIssue(next.error) };
+  if (next.data !== String(f.get('confirm') ?? '')) return { error: 'The new passwords don’t match.' };
+  if (next.data === current) return { error: 'Choose a password different from the current one.' };
+  if (!(await rateLimit('change-password', v.id, 5, 900))) return { error: 'Too many attempts. Please wait 15 minutes.' };
+  if (!(await passwordMatches(v.email, current))) return { error: 'Your current password is incorrect.' };
+  try {
+    await setUserPassword(v.id, next.data);
+    return { ok: 'Your password has been changed. Use it next time you sign in.' };
+  } catch (e) {
+    return { error: e instanceof Error ? e.message : 'Could not change the password.' };
+  }
 }
 
 /** Push edits made in Supabase live immediately (otherwise caches refresh on their own schedule). */

@@ -112,15 +112,23 @@ In Supabase:
 
 ## Step 5 — Make yourself admin
 
-1. Open `https://<your-address>/en/portal/login`, enter your email, and sign in with the link or code you receive.
-2. In Supabase → **SQL Editor** → **New query**, run this with your email:
-   ```sql
-   update public.profiles set role = 'admin' where email = 'your@email.com';
-   ```
-3. Open `https://<your-address>/admin`. You're in.
-4. To add other staff:
-   - each person signs in once at `/en/portal/login`;
-   - then, in **Admin → Users & roles**, give them **admin** (full access) or **counsellor** (leads, bookings and applications, but no content editing).
+Staff sign in at `/admin/login` with an **email and password**. No sign-in emails are involved.
+
+1. The first admin account (`ceo.edigitechstudio@gmail.com`) already exists with a temporary password.
+   - Sign in at `https://<your-address>/admin/login`.
+   - Then open **My account** (bottom left) and change the password.
+2. To add other staff, open **Admin → Users & roles → Add staff member**:
+   - enter their name and email;
+   - choose **Counsellor** (leads, bookings and applications) or **Admin** (everything, including staff and website content);
+   - click **Generate** for a password, then **Add staff member**.
+
+   Give them the email and password in person or by phone. They can change the password under **My account**.
+3. **Forgotten password:** in **Users & roles**, open **Set new password** under their name.
+
+> To make a brand-new admin without the dashboard: create the user in Supabase → **Authentication → Users → Add user** (tick **Auto confirm**). Then run this in the SQL Editor:
+> ```sql
+> update public.profiles set role = 'admin' where email = 'their@email.com';
+> ```
 
 ## Step 6 — Spam protection and rate limits (recommended, free)
 

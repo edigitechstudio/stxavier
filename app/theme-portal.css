@@ -386,3 +386,25 @@ a.doc-chip.is-missing:hover { border-color: var(--blue-600); color: var(--link);
   .ui-row { grid-template-columns: 1fr; }
   .cms-pair { grid-template-columns: 1fr; }
 }
+
+/* ---------- Staff accounts: password sign-in, add staff, set / change password ---------- */
+.form-ok { padding: 10px 14px; border-radius: 12px; background: rgb(22 163 74 / 0.1); color: #15803d; font-size: 14px; font-weight: 600; }
+.dark .form-ok { color: #4ade80; }
+.pw-field { position: relative; display: block; }
+.pw-field input { width: 100%; padding-right: 48px; }
+.pw-toggle { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; color: var(--muted); }
+.pw-toggle:hover { background: var(--tint); color: var(--link); }
+.staff-form { display: grid; gap: 14px; margin-top: 12px; }
+.staff-form label, .staff-pw > label { display: grid; gap: 5px; font-size: 13px; font-weight: 600; color: var(--ink); }
+.staff-form > .btn { justify-self: start; }
+.staff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.staff-pw { display: grid; gap: 5px; }
+.staff-pw-row { display: flex; gap: 8px; }
+.staff-pw-row input { flex: 1; min-width: 0; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; letter-spacing: 0.04em; }
+.staff-pw small, .staff-form small { font-size: 12px; font-weight: 400; }
+.staff-narrow { max-width: 420px; }
+.staff-setpw { margin-top: 8px; }
+.staff-setpw > summary { cursor: pointer; font-size: 13px; font-weight: 700; color: var(--link); width: fit-content; }
+.staff-setpw .staff-form { max-width: 420px; }
+.cap { text-transform: capitalize; }
+@media (max-width: 760px) { .staff-grid { grid-template-columns: 1fr; } }

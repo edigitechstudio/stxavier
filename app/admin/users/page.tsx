@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { AdminShell, AdminSkeleton } from '@/components/admin/admin-shell';
+import { AddStaffForm, SetPasswordForm } from '@/components/admin/staff-forms';
+import { demoAuth } from '@/lib/auth/mode';
 import { fmtDate } from '@/lib/admin/labels';
 import { requireAdmin } from '@/lib/auth/viewer';
 import { listProfiles } from '@/lib/portal/admin';
@@ -29,14 +31,17 @@ async function Users() {
   const staff = people.filter((p) => p.role !== 'student');
   const students = people.filter((p) => p.role === 'student');
 
-  const table = (rows: typeof people) => (
+  const table = (rows: typeof people, withPassword: boolean) => (
     <div className="table-wrap">
       <table className="admin-table">
         <thead><tr><th scope="col">Name</th><th scope="col">Joined</th><th scope="col">Role</th></tr></thead>
         <tbody>
           {rows.map((p) => (
             <tr key={p.id}>
-              <td>{p.full_name ?? '—'}<small>{p.email}</small></td>
+              <td>
+                {p.full_name ?? '—'}<small>{p.email}</small>
+                {withPassword && p.id !== viewer.id && !demoAuth && <SetPasswordForm userId={p.id} name={p.full_name ?? p.email ?? 'this person'} />}
+              </td>
               <td className="nowrap">{fmtDate(p.created_at)}</td>
               <td>
                 {p.id === viewer.id ? (
@@ -61,16 +66,23 @@ async function Users() {
   return (
     <AdminShell section="users" viewer={viewer} title="Users & roles">
       <p className="muted admin-lead">
-        Everyone signs in with a magic link or Google. To add a staff member, ask them to sign in once through the student portal (<code>/en/portal/login</code>), then change their role here — staff sign-in never creates new accounts.
+        Staff sign in at <code>/admin/login</code> with the email and password you set here; no emails are sent. Students sign in to the portal with an email link.
         {' '}{ROLES.map((r) => `${r.label}: ${r.help}`).join(' · ')}.
       </p>
+      {!demoAuth && (
+        <section className="admin-card">
+          <h2>Add staff member</h2>
+          <p className="muted">Creates their login straight away. If the email already has an account (for example a student), it becomes staff with this password.</p>
+          <AddStaffForm />
+        </section>
+      )}
       <section className="admin-card">
         <h2>Staff ({staff.length})</h2>
-        {table(staff)}
+        {table(staff, true)}
       </section>
       <section className="admin-card">
         <h2>Students ({students.length})</h2>
-        {students.length ? table(students) : <p className="muted">No students yet.</p>}
+        {students.length ? table(students, false) : <p className="muted">No students yet.</p>}
       </section>
     </AdminShell>
   );

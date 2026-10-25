@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
 import { ShieldCheck } from 'lucide-react';
 import { LoginPanel, type LoginLabels } from '@/components/auth/login-panel';
+import { StaffLoginForm } from '@/components/auth/staff-login-form';
 import { demoAuth } from '@/lib/auth/mode';
-import { getAuthProviders } from '@/lib/auth/providers';
 import { safeNext } from '@/lib/auth/safe-next';
 import { getViewer, isStaff } from '@/lib/auth/viewer';
 import { isSupabaseConfigured } from '@/lib/env';
@@ -53,7 +53,7 @@ export default function AdminLoginPage({ searchParams }: PageProps<'/admin/login
         <Suspense fallback={<div className="auth-skel" aria-hidden />}>
           <Body searchParams={searchParams} />
         </Suspense>
-        <p className="auth-help">Staff accounts are created by invitation from an admin.</p>
+        <p className="auth-help">Staff accounts are created by an admin. Forgot your password? Ask an admin to set a new one.</p>
       </section>
     </main>
   );
@@ -69,7 +69,12 @@ async function Body({ searchParams }: { searchParams: PageProps<'/admin/login'>[
     <>
       {error && <p className="form-error" role="alert">{error}</p>}
       {viewer && !error && <p className="form-error" role="alert">{ERRORS.forbidden}</p>}
-      <LoginPanel next={next.startsWith('/admin') ? next : '/admin'} labels={LABELS} demo={demoAuth} configured={isSupabaseConfigured} allowSignup={false} demoRoles={['admin', 'counsellor']} google={(await getAuthProviders()).google} />
+      {isSupabaseConfigured && !demoAuth ? (
+        <StaffLoginForm next={next.startsWith('/admin') ? next : '/admin'} />
+      ) : (
+        // Local demo mode (no Supabase): one-click sample staff accounts.
+        <LoginPanel next={next.startsWith('/admin') ? next : '/admin'} labels={LABELS} demo={demoAuth} configured={isSupabaseConfigured} allowSignup={false} demoRoles={['admin', 'counsellor']} />
+      )}
     </>
   );
 }

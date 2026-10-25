@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CalendarClock, CalendarDays, ExternalLink, FolderKanban, Inbox, LayoutDashboard, LogOut, Newspaper, Users } from 'lucide-react';
+import { CalendarClock, CalendarDays, ExternalLink, FolderKanban, Inbox, KeyRound, LayoutDashboard, LogOut, Newspaper, Users } from 'lucide-react';
 import { signOut } from '@/lib/auth/actions';
 import { demoAuth } from '@/lib/auth/mode';
 import type { Viewer } from '@/types/portal';
 
-export type AdminSection = 'overview' | 'leads' | 'bookings' | 'availability' | 'applications' | 'users' | 'content';
+export type AdminSection = 'overview' | 'leads' | 'bookings' | 'availability' | 'applications' | 'users' | 'content' | 'account';
 
 const NAV = [
   { id: 'overview', href: '/admin', label: 'Overview', icon: LayoutDashboard },
@@ -40,6 +40,9 @@ export function AdminShell({ section, viewer, title, actions, children }: { sect
           {demoAuth && <span className="admin-demo">Demo mode</span>}
           <strong>{viewer.name}</strong>
           <small>{viewer.role}</small>
+          <Link href="/admin/account" className="admin-site" aria-current={section === 'account' ? 'page' : undefined}>
+            <KeyRound size={13} aria-hidden /> My account
+          </Link>
           <a href="/en" className="admin-site" target="_blank" rel="noopener">View website <ExternalLink size={13} aria-hidden /></a>
           <form action={signOut}>
             <input type="hidden" name="next" value="/admin/login" />

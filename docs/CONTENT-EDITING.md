@@ -14,11 +14,14 @@ How the St. Xavier team keeps the site and the student portal up to date, with n
    - Email: enabled. Under **Email templates → Magic link**, include `{{ .Token }}` so the email shows the 6-digit code as well as the link.
    - Google: create OAuth credentials in Google Cloud. The authorised redirect URI is the one Supabase shows on the Google provider page.
    - Optional: **Attack protection → CAPTCHA** with Cloudflare Turnstile. Use the same keys as `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY`.
-6. **Create the first admin.** Sign in once at `/en/portal/login`, then run this in the SQL editor:
-   ```sql
-   update public.profiles set role = 'admin' where email = 'you@stxavier.com.np';
-   ```
-   After that, give other staff their roles under **Admin → Users & roles**. Each person must sign in once through the portal first.
+6. **Staff accounts.** Staff sign in at `/admin/login` with an email and password. No sign-in emails are sent.
+   - **Create the first admin:** in Supabase → **Authentication → Users → Add user**, enter the email and a password and tick **Auto confirm**. Then run this in the SQL editor:
+     ```sql
+     update public.profiles set role = 'admin' where email = 'you@stxavier.com.np';
+     ```
+   - **Everyone else:** add them under **Admin → Users & roles → Add staff member** (name, email, role, generated password). Share the password privately.
+   - **Passwords:** each person can change their own under **My account**. Admins reset a forgotten one with **Set new password** in Users & roles.
+   - Students still sign in to the portal with an email link (or Google, if enabled).
 
 ## 2. Day-to-day work in the admin (`/admin`)
 
